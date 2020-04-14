@@ -1,0 +1,53 @@
+Project 4
+
+
+
+//Pseudocode
+
+Summary
+
+Quaranscene Cuisine
+
+We are using the Movie Database API to SERVE users a random movie based on a genre selection and provide a paired cuisine. 
+
+// Create app namespace to hold all methods
+const QuaransceneApp = {};
+
+//Create array of genres that is a property of the QuaransceneApp, each genre has a property of ONE cuisine associated with it
+QuaransceneApp.genres = [];
+
+// Collect user input from a selection of genres options matched to the array. 
+QuaransceneApp.collectInfo = function() {};
+
+// Get submit event through a button with bell icon
+QuaransceneApp.submit = function() {}
+
+//Save selected value as a variable
+Let choosenOne = $(‘option’).on(‘click’, function () {}).val()
+
+// Make AJAX request with saved variable
+QuaransceneApp.getInfo = function() {};
+
+// Save the response data into a variable 
+QuaransceneApp.saveResponse = function() {};
+
+//Upon receiving data, randomize the possible results with the input genre
+QuaransceneApp.randomize = function() {};
+
+//Save the randomized values into a variable
+QuaransceneApp.saveVariable = function() {};
+
+//After getting the randomized result, pair it with ITS cuisine option from the cuisine array
+QuaransceneApp.pair = function() {};
+
+// Display both movie variable and cuisine on the page
+QuaransceneApp.displayInfo = function() {};
+
+// Start app
+QuaransceneApp.init = function() {};
+
+$(function() {
+    QuaransceneApp.init();
+});
+
+
