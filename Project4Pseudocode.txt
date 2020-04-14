@@ -11,7 +11,7 @@ Quaranscene Cuisine
 We are using the Movie Database API to SERVE users a random movie based on a genre selection and provide a paired cuisine. 
 
 // Create app namespace to hold all methods
-const QuaransceneApp = {};
+const quaransceneApp = {};
 
 //Create array of genres that is a property of the QuaransceneApp, each genre has a property of ONE cuisine associated with it
 QuaransceneApp.genres = [];
