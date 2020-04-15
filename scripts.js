@@ -64,13 +64,19 @@ $('.bell').on('click', function () {
 
 quaranscene.displayMovieResult = (movieList) => {
   console.log(movieList);
-  quaranscene.movieTitle = (movieList.results[0].title);
-  quaranscene.moviePoster = (movieList.results[0].poster_path);
+  const movieRNG = quaranscene.rng(0, movieList["results"].length);
+  console.log("this is random " + movieRNG);
+  quaranscene.movieTitle = movieList.results[movieRNG].title;
+  quaranscene.moviePoster = movieList.results[movieRNG].poster_path;
   const htmlToAppend = `<li class="movieResult"> <h2>${quaranscene.movieTitle}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt=""> </li>`;
   $('.resultUl').empty();
   $(".resultUl").append(htmlToAppend);
 }
 
+
+quaranscene.rng = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+};
 
 // Start app
 quaranscene.init = function() {
