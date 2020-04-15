@@ -42,7 +42,7 @@ quaranscene.movieRequest = (id) => {
         with_genres: `${id}`,
       },
     }).then(function (result) {
-      console.log(result);
+      quaranscene.movieList = result;
     });
 
 }
@@ -57,14 +57,21 @@ quaranscene.genre = quaranscene.genreOptions[quaranscene.userSelection];
 $('.bell').on('click', function () {
  //make api
  quaranscene.movieRequest(quaranscene.genre);
+ quaranscene.displayMovieResult(quaranscene.movieList);
 })
 
-
+quaranscene.displayMovieResult = (movieList) => {
+  quaranscene.movieTitle = (movieList.results[0].title);
+  const htmlToAppend = `<li class="movieResult"> ${quaranscene.movieTitle}</li>`;
+  $(".resultUl").append(htmlToAppend);
+}
 
 
 // Start app
 quaranscene.init = function() {
     // quaranscene.movieRequest();
+    quaranscene.movieRequest(9648);
+    quaranscene.displayMovieResult(quaranscene.movieList);
 };
 
 $(function() {
