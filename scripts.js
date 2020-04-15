@@ -3,7 +3,9 @@ const quaranscene = {};
 //name space variables
 quaranscene.apiKey = 'ffb95a5b116cb8ae246c7c6f51c94ed6'; //the apiKey
 
-quaranscene.baseURL = `https://api.themoviedb.org/3/discover/movie`;
+quaranscene.baseURL = `https://api.themoviedb.org/3/discover/movie/`;
+
+quaranscene.baseImageURL = `https://image.tmdb.org/t/p/w500`;
 
 quaranscene.userSelection = "mystery";
 
@@ -61,8 +63,11 @@ $('.bell').on('click', function () {
 })
 
 quaranscene.displayMovieResult = (movieList) => {
+  console.log(movieList);
   quaranscene.movieTitle = (movieList.results[0].title);
-  const htmlToAppend = `<li class="movieResult"> ${quaranscene.movieTitle}</li>`;
+  quaranscene.moviePoster = (movieList.results[0].poster_path);
+  const htmlToAppend = `<li class="movieResult"> <h2>${quaranscene.movieTitle}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt=""> </li>`;
+  $('.resultUl').empty();
   $(".resultUl").append(htmlToAppend);
 }
 
