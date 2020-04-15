@@ -5,6 +5,8 @@ quaranscene.apiKey = 'ffb95a5b116cb8ae246c7c6f51c94ed6'; //the apiKey
 
 quaranscene.baseURL = `https://api.themoviedb.org/3/discover/movie`;
 
+quaranscene.userSelection = "mystery";
+
 quaranscene.genreOptions = {
   action: 28,
   adventure: 12,
@@ -27,9 +29,7 @@ quaranscene.genreOptions = {
   western: 37
 }
 
-quaranscene.genre = quaranscene.genreOptions;
-
-quaranscene.movieRequest = () => {
+quaranscene.movieRequest = (id) => {
 
     $.ajax({
       url: quaranscene.baseURL,
@@ -39,7 +39,7 @@ quaranscene.movieRequest = () => {
         api_key: quaranscene.apiKey,
         language: "en-US",
         include_adult: false,
-        with_genres: `${quaranscene.genre}`,
+        with_genres: `${id}`,
       },
     }).then(function (result) {
       console.log(result);
@@ -47,12 +47,24 @@ quaranscene.movieRequest = () => {
 
 }
 
+//event listener for user selection 
+$('select').on('change', function () {
+ quaranscene.userSelection = $(this).val();
+quaranscene.genre = quaranscene.genreOptions[quaranscene.userSelection];
+})
+
+//event listener for user ssubmit
+$('.bell').on('click', function () {
+ //make api
+ quaranscene.movieRequest(quaranscene.genre);
+})
+
 
 
 
 // Start app
 quaranscene.init = function() {
-    quaranscene.movieRequest();
+    // quaranscene.movieRequest();
 };
 
 $(function() {
