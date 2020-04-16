@@ -31,6 +31,46 @@ quaranscene.genreOptions = {
   western: 37
 }
 
+quaranscene.cuisinePairing = [
+  {genre: action,
+  food: "Pizza"},
+  {genre: adventure,
+  food: "Escargot"},
+  {genre: animation,
+  food:  "Lucky Charms Cereal"},
+  {genre: comedy,
+  food:  "Caramel Popcorn"},
+  {genre: crime,
+  food:  "Doughnuts and Coffee"},
+  { genre: documentary,
+  food:  "Soft Pretzels"},
+  {genre: drama,
+  food:  "Wine and Cheese Platter"},
+  {genre: family,
+  food:  "Fast Food"},
+  {genre: fantasy,
+  food:  "Dragonfruit"},
+  {genre: history,
+  food:  "Rotisserie Chicken"},
+  {genre: horror,
+  food:  "Tomato Soup"},
+  {genre: music,
+  food:  "Birthday Cake"},
+  {genre: mystery,
+    food: "Spam"},
+  {genre: romance,
+  food:  "Spaghetti"},
+  {genre: scienceFiction,
+  food:  "Freeze-dried Foods"},
+  {genre: tvMovie,
+  food: "Microwave Dinner"},
+  {genre: thriller,
+  food:  "Popcorn"},
+  {genre: war,
+  food:  "Canned Food"},
+  {genre: western,
+    food:  "Steak and Potatoes"}
+]
 quaranscene.movieRequest = (id) => {
 
     $.ajax({
