@@ -146,8 +146,15 @@ quaranscene.displayMovieResult = (movieList) => {
   console.log("this is random " + movieRNG);
   quaranscene.movieTitle = movieList.results[movieRNG].title;
   quaranscene.moviePoster = movieList.results[movieRNG].poster_path;
+  let genre = "";
+  for (genre in quaranscene.cuisinePairing) {
+    console.log($(this));
+    if(genre === quaranscene.genre) {
+      
+    }
+  }
   const htmlToAppend = `<li class="movieResult"> <h2>${quaranscene.movieTitle}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt=""> </li> 
-  <li class="dinnerResult"> <h2>${quaranscene.movieTitle}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt=""> </li>`;
+  <li class="dinnerResult"> <h2>${quaranscene.genre}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt=""> </li> `;
   $('.resultUl').empty();
   $(".resultUl").append(htmlToAppend);
 }
