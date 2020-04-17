@@ -253,4 +253,10 @@ h1 {
 li {
   list-style-type: none;
 }
+
+.genreUl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=styles.css.map */
