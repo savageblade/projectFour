@@ -255,6 +255,11 @@ body {
   margin: 100px;
 }
 
+main {
+  height: 100vh;
+  overflow: hidden;
+}
+
 h1 {
   font-family: 'Cinzel', serif;
   font-size: 3rem;
@@ -296,22 +301,90 @@ select {
 .resultUl li {
   position: relative;
   width: 120px;
-  padding-top: 62px;
+  padding-top: 33px;
+}
+
+.resultUl li .dinnerResult {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0;
+}
+
+/*Plates*/
+@-webkit-keyframes riseToLeft {
+  0% {
+    -webkit-transform: rotatez(0);
+            transform: rotatez(0);
+  }
+  100% {
+    -webkit-transform: rotatez(-90deg);
+            transform: rotatez(-90deg);
+  }
+}
+@keyframes riseToLeft {
+  0% {
+    -webkit-transform: rotatez(0);
+            transform: rotatez(0);
+  }
+  100% {
+    -webkit-transform: rotatez(-90deg);
+            transform: rotatez(-90deg);
+  }
+}
+
+.movieCoverOpen {
+  -webkit-animation: riseToLeft 2s ease-in-out;
+          animation: riseToLeft 2s ease-in-out;
+}
+
+.movieCoverClose {
+  -webkit-animation: riseToLeft 2s ease-in-out;
+          animation: riseToLeft 2s ease-in-out;
+  animation-direction: reverse;
+}
+
+.movieClosedState {
+  -webkit-transform: rotatez(0);
+          transform: rotatez(0);
+}
+
+.movieOpenState {
+  -webkit-transform: rotatez(-90deg);
+          transform: rotatez(-90deg);
+}
+
+.moviePlateCover, .dinnerPlateCover {
+  position: absolute;
+  width: 440px;
+  top: -36px;
+  left: 50%;
+  margin-left: -220px;
+  -webkit-clip-path: polygon(46.28% -0.72%, 53.72% -1.12%, 83% 44.29%, 95.05% 85.26%, 100.45% 88.81%, 100% 98.08%, 0px 100%, -0.64% 89.82%, 5.27% 85.48%, 14.58% 49.15%);
+          clip-path: polygon(46.28% -0.72%, 53.72% -1.12%, 83% 44.29%, 95.05% 85.26%, 100.45% 88.81%, 100% 98.08%, 0px 100%, -0.64% 89.82%, 5.27% 85.48%, 14.58% 49.15%);
 }
 
 .moviePlateCover {
+  -webkit-transform-origin: -100% 50%;
+          transform-origin: -100% 50%;
+}
+
+.moviePlate, .dinnerPlate {
   position: absolute;
-  width: 440px;
-  top: -7px;
-  left: 50%;
-  margin-left: -220px;
+  width: 1000px;
+  top: 188px;
+  z-index: -1;
 }
 
 .moviePlate {
-  position: absolute;
-  width: 1000px;
   left: -775px;
-  top: 188px;
+}
+
+.dinnerPlate {
+  right: -775px;
 }
 
 footer {

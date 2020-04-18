@@ -9,6 +9,11 @@ body {
     margin: 100px;
 }
 
+main {
+    height: 100vh;
+    overflow: hidden;
+}
+
 h1 {
     font-family: 'Cinzel', serif;
     font-size: 3rem;
@@ -41,23 +46,70 @@ select{
     li {
         position: relative;
         width: 120px;
-        padding-top: 62px;
+        padding-top: 33px;
+        .dinnerResult {
+            display: flex;
+            align-items: flex-start;
+            padding: 0;
+        }
     }
 }
 
-.moviePlateCover {
+/*Plates*/
+
+@keyframes riseToLeft {
+    0% {transform: rotatez(0);}
+    100% {transform: rotatez(-90deg);}
+}
+
+.movieCoverOpen {
+    animation: riseToLeft 2s ease-in-out;
+}
+
+.movieCoverClose {
+    animation: riseToLeft 2s ease-in-out;
+    animation-direction: reverse;
+}
+
+.movieClosedState {
+    transform: rotatez(0);
+}
+
+.movieOpenState {
+    transform: rotatez(-90deg);
+}
+
+.moviePlateCover, .dinnerPlateCover {
     position: absolute;
     width: 440px;
-    top: -7px;
+    top: -36px;
     left: 50%;
     margin-left: -220px;
+    clip-path: polygon(46.28% -0.72%, 53.72% -1.12%, 83% 44.29%, 95.05% 85.26%, 100.45% 88.81%, 100% 98.08%, 0px 100%, -0.64% 89.82%, 5.27% 85.48%, 14.58% 49.15%);
+}
+
+.moviePlateCover {
+    transform-origin: -100% 50%;
+}
+
+.dinnerPlateCover {
+    
+}
+
+.moviePlate, .dinnerPlate {
+    position: absolute;
+    width: 1000px;
+    top: 188px;
+
+    z-index: -1;
 }
 
 .moviePlate {
-    position: absolute;
-    width: 1000px;
     left: -775px;
-    top: 188px;
+}
+
+.dinnerPlate {
+    right: -775px;
 }
 
 footer {
