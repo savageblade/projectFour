@@ -264,6 +264,10 @@ li {
   list-style-type: none;
 }
 
+option {
+  padding-right: 20px;
+}
+
 .genreUl {
   display: -webkit-box;
   display: -ms-flexbox;
