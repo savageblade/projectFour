@@ -249,9 +249,10 @@ html {
 }
 
 body {
-  background-color: cornflowerblue;
+  background-color: #F0FFFF;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
+  margin: 100px;
 }
 
 h1 {
@@ -264,8 +265,9 @@ li {
   list-style-type: none;
 }
 
-option {
-  padding-right: 20px;
+select {
+  width: 250px;
+  padding: 10px;
 }
 
 .genreUl {
@@ -310,5 +312,11 @@ option {
   width: 1000px;
   left: -775px;
   top: 188px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.6rem;
 }
 /*# sourceMappingURL=styles.css.map */
