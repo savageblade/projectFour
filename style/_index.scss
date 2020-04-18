@@ -10,7 +10,8 @@ body {
 
 h1 {
     font-family: 'Cinzel', serif;
-    font-size: 5rem;
+    font-size: 3rem;
+    text-align: center;
 }
 
 li {
@@ -19,4 +20,36 @@ li {
 
 .genreUl {
     display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.resultUl {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    h2 {
+        display: none;
+    }
+
+    li {
+        position: relative;
+        width: 120px;
+        padding-top: 62px;
+    }
+}
+
+.moviePlateCover {
+    position: absolute;
+    width: 440px;
+    top: -7px;
+    left: 50%;
+    margin-left: -220px;
+}
+
+.moviePlate {
+    position: absolute;
+    width: 1000px;
+    left: -775px;
+    top: 188px;
 }

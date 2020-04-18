@@ -153,7 +153,14 @@ quaranscene.displayMovieResult = (movieList) => {
       
     }
   }
-  const htmlToAppend = `<li class="movieResult"> <h2>${quaranscene.movieTitle}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt=""> </li> 
+  const htmlToAppend = `<li class="movieResult"> 
+  <div class="moviePlate">
+    <img src="./assets/plateToRight.png" alt="A waiter wearing clean white shirt, a black vest and white gloves holding a silver platter to the right">
+  </div>
+  <div class="moviePlateCover">
+    <img src="./assets/plateCover.png" alt="A silver, domed shaped plate cover for food">
+  </div>
+  <h2>${quaranscene.movieTitle}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt=""> </li> 
   <li class="dinnerResult"> <h2>${quaranscene.genre}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt=""> </li> `;
   $('.resultUl').empty();
   $(".resultUl").append(htmlToAppend);

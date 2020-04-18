@@ -235,6 +235,15 @@ html {
   overflow: hidden;
 }
 
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -247,7 +256,8 @@ body {
 
 h1 {
   font-family: 'Cinzel', serif;
-  font-size: 5rem;
+  font-size: 3rem;
+  text-align: center;
 }
 
 li {
@@ -258,5 +268,43 @@ li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.resultUl {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.resultUl h2 {
+  display: none;
+}
+
+.resultUl li {
+  position: relative;
+  width: 120px;
+  padding-top: 62px;
+}
+
+.moviePlateCover {
+  position: absolute;
+  width: 440px;
+  top: -7px;
+  left: 50%;
+  margin-left: -220px;
+}
+
+.moviePlate {
+  position: absolute;
+  width: 1000px;
+  left: -775px;
+  top: 188px;
 }
 /*# sourceMappingURL=styles.css.map */
