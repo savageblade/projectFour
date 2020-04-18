@@ -44,18 +44,37 @@ option{
     li {
         position: relative;
         width: 120px;
-        padding-top: 50px;
+        padding-top: 33px;
+        .dinnerResult {
+            display: flex;
+            align-items: flex-start;
+            padding: 0;
+        }
     }
 }
 
 /*Plates*/
 
 @keyframes riseToLeft {
-
+    0% {transform: rotatez(0);}
+    100% {transform: rotatez(-90deg);}
 }
 
-.movieCoverRise {
-    animation: riseToLeft 2s ease-in-out infinite;
+.movieCoverOpen {
+    animation: riseToLeft 2s ease-in-out;
+}
+
+.movieCoverClose {
+    animation: riseToLeft 2s ease-in-out;
+    animation-direction: reverse;
+}
+
+.movieClosedState {
+    transform: rotatez(0);
+}
+
+.movieOpenState {
+    transform: rotatez(-90deg);
 }
 
 .moviePlateCover, .dinnerPlateCover {
@@ -64,14 +83,11 @@ option{
     top: -36px;
     left: 50%;
     margin-left: -220px;
-    clip-path: polygon(42.87% 2%, 56.68% 2%, 78.68% 30.27%, 95.05% 85.26%, 100.45% 88.81%, 100% 98.08%, 0px 100%, -0.64% 89.82%, 5.27% 85.48%, 19.81% 34.74%);
-    border: 3px solid greenyellow;
+    clip-path: polygon(46.28% -0.72%, 53.72% -1.12%, 83% 44.29%, 95.05% 85.26%, 100.45% 88.81%, 100% 98.08%, 0px 100%, -0.64% 89.82%, 5.27% 85.48%, 14.58% 49.15%);
 }
 
 .moviePlateCover {
-    transform-origin: left;
-    transform: rotateX();
-    
+    transform-origin: -100% 50%;
 }
 
 .dinnerPlateCover {

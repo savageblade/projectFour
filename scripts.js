@@ -140,12 +140,13 @@ $('.bell').on('click', function () {
  //make api call on click
  quaranscene.movieRequest(quaranscene.genre);
  quaranscene.displayMovieResult(quaranscene.movieList);
+ $('.moviePlateCover').toggleClass('movieCoverOpen');
 })
 
 //select movie title and poster from api array using random index
 quaranscene.displayMovieResult = (movieList) => {
   console.log(movieList);
-  const movieRNG = quaranscene.rng(0, movieList["results"].length);
+  const movieRNG = quaranscene.rng(0, movieList["results"].length - 1 );
   console.log("this is random " + movieRNG);
   quaranscene.movieTitle = movieList.results[movieRNG].title;
   quaranscene.moviePoster = movieList.results[movieRNG].poster_path;
