@@ -141,6 +141,7 @@ $('.bell').on('click', function () {
  quaranscene.movieRequest(quaranscene.genre);
  quaranscene.displayMovieResult(quaranscene.movieList);
  $('.moviePlateCover').toggleClass('movieCoverOpen');
+ 
 })
 
 //select movie title and poster from api array using random index
