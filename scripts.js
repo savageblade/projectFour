@@ -155,15 +155,27 @@ quaranscene.displayMovieResult = (movieList) => {
   });
   console.log(quaranscene.filteredFood[0].food);
   //Add content to the DOM
-  const htmlToAppend = `<li class="movieResult"> 
-  <div class="moviePlate">
-    <img src="./assets/plateToRight.png" alt="A waiter wearing clean white shirt, a black vest and white gloves holding a silver platter to the right">
-  </div>
-  <div class="moviePlateCover">
-    <img src="./assets/plateCover.png" alt="A silver, domed shaped plate cover for food">
-  </div>
-  <h2>${quaranscene.movieTitle}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt=""> </li> 
-  <li class="dinnerResult"> <h2>${quaranscene.filteredFood[0].food}</h2> <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}"> </li>`;
+  const htmlToAppend = `
+  <li class="movieResult"> 
+    <div class="moviePlate">
+      <img src="./assets/plateToRight.png" alt="A waiter wearing clean white shirt, a black vest and white gloves holding a silver platter to the right">
+    </div>
+    <div class="moviePlateCover">
+      <img src="./assets/plateCover.png" alt="A silver, domed shaped plate cover for food">
+    </div>
+    <h2>${quaranscene.movieTitle}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">
+  </li> 
+  <li class="dinnerResult">
+    <div class="dinnerPlate">
+      <img src="./assets/plateToLeft.png"
+        alt="A waiter wearing clean white shirt, a black vest and white gloves holding a silver platter to the left">
+    </div>
+    <div class="dinnerPlateCover">
+      <img src="./assets/plateCover.png" alt="A silver, domed shaped plate cover for food">
+    </div>
+    <h2>${quaranscene.filteredFood[0].food}</h2>
+    <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">
+    </li>`;
   $(".resultUl").empty();
   $(".resultUl").append(htmlToAppend);
 };

@@ -299,21 +299,39 @@ option {
 .resultUl li {
   position: relative;
   width: 120px;
-  padding-top: 62px;
+  padding-top: 50px;
+}
+
+/*Plates*/
+@-webkit-keyframes riseToLeft {}
+@keyframes riseToLeft {}.movieCoverRise {
+  -webkit-animation: riseToLeft 2s ease-in-out infinite;
+          animation: riseToLeft 2s ease-in-out infinite;
 }
 
 .moviePlateCover, .dinnerPlateCover {
   position: absolute;
   width: 440px;
-  top: -7px;
+  top: -36px;
   left: 50%;
   margin-left: -220px;
+  -webkit-clip-path: polygon(42.87% 2%, 56.68% 2%, 78.68% 30.27%, 95.05% 85.26%, 100.45% 88.81%, 100% 98.08%, 0px 100%, -0.64% 89.82%, 5.27% 85.48%, 19.81% 34.74%);
+          clip-path: polygon(42.87% 2%, 56.68% 2%, 78.68% 30.27%, 95.05% 85.26%, 100.45% 88.81%, 100% 98.08%, 0px 100%, -0.64% 89.82%, 5.27% 85.48%, 19.81% 34.74%);
+  border: 3px solid greenyellow;
+}
+
+.moviePlateCover {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: rotateX();
+          transform: rotateX();
 }
 
 .moviePlate, .dinnerPlate {
   position: absolute;
   width: 1000px;
   top: 188px;
+  z-index: -1;
 }
 
 .moviePlate {
