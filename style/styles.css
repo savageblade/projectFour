@@ -254,6 +254,11 @@ body {
   font-size: 2.8rem;
 }
 
+main {
+  height: 100vh;
+  overflow: hidden;
+}
+
 h1 {
   font-family: 'Cinzel', serif;
   font-size: 3rem;
@@ -297,7 +302,7 @@ option {
   padding-top: 62px;
 }
 
-.moviePlateCover {
+.moviePlateCover, .dinnerPlateCover {
   position: absolute;
   width: 440px;
   top: -7px;
@@ -305,10 +310,17 @@ option {
   margin-left: -220px;
 }
 
-.moviePlate {
+.moviePlate, .dinnerPlate {
   position: absolute;
   width: 1000px;
-  left: -775px;
   top: 188px;
+}
+
+.moviePlate {
+  left: -775px;
+}
+
+.dinnerPlate {
+  right: -775px;
 }
 /*# sourceMappingURL=styles.css.map */
