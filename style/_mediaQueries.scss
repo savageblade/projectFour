@@ -1,0 +1,19 @@
+@media (max-width: 950px) {
+    .dinnerContainer .fakeCover,
+    .dinnerPlate {
+        display: none;
+    }
+
+    .dinnerContainer {
+        position: absolute;
+        right: 325px;
+        top: 60px;
+        z-index: -1;
+    }
+
+    .movieCover {
+        z-index: 2;
+    }
+
+    
+}
