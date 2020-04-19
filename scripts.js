@@ -152,7 +152,7 @@ quaranscene.movieRequest = (id) => {
     console.log(id);
     quaranscene.movieList = result;
     //when a result comes back, update the screen
-    quaranscene.displayMovieResult(quaranscene.movieList);
+    // quaranscene.displayMovieResult(quaranscene.movieList);
     console.log(result);
   });
 }
@@ -169,20 +169,36 @@ console.log(
 //event listener for user ssubmit
 $('.bell').on('click', function () {
 
-    //on itial load the result will be covered, so just remove the lid, otherwise cover the result and then remove to reveal
+    //make the movie request
+    quaranscene.movieRequest(quaranscene.genre);
+    //on initial web site load, the covers will be closed so just reveal the content
     if (!quaranscene.firstOpen) {
       quaranscene.firstOpen = true;
-      quaranscene.movieRequest(quaranscene.genre);
-      $(".movieContainer .fakeCover").removeClass("movieClosedState");
-      $(".movieContainer .fakeCover").addClass("movieOpenState");
-    } else {
-      $(".movieContainer .fakeCover").removeClass("movieOpenState");
-      $(".movieContainer .fakeCover").addClass("movieClosedState");
+        quaranscene.displayMovieResult(quaranscene.movieList);
+        //allow time for the movie result to get images to display
       setTimeout(function() {
-        quaranscene.movieRequest(quaranscene.genre);
         $(".movieContainer .fakeCover").removeClass("movieClosedState");
         $(".movieContainer .fakeCover").addClass("movieOpenState");
-      }, 2000)
+        $(".dinnerContainer .fakeCover").removeClass("dinnerClosedState");
+        $(".dinnerContainer .fakeCover").addClass("dinnerOpenState");
+      },600)
+      
+    } else { //lid has already been opened
+      $(".movieContainer .fakeCover").removeClass("movieOpenState");
+      $(".movieContainer .fakeCover").addClass("movieClosedState");
+      $(".dinnerContainer .fakeCover").removeClass("dinnerOpenState");
+      $(".dinnerContainer .fakeCover").addClass("dinnerClosedState");
+      //allow time for the animation to "close" the lid before updating the images
+      setTimeout(function() {
+        quaranscene.displayMovieResult(quaranscene.movieList);
+      }, 1600);
+      //give time to keep the lid closed while images are updated
+      setTimeout(function() {
+        $(".movieContainer .fakeCover").removeClass("movieClosedState");
+        $(".movieContainer .fakeCover").addClass("movieOpenState");
+        $(".dinnerContainer .fakeCover").removeClass("dinnerClosedState");
+        $(".dinnerContainer .fakeCover").addClass("dinnerOpenState");
+      }, 2000);
       
     }
 

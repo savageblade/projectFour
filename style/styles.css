@@ -417,34 +417,6 @@ select {
 }
 
 /*Plates*/
-@-webkit-keyframes riseToLeft {
-  0% {
-    -webkit-transform: rotatez(0);
-            transform: rotatez(0);
-  }
-  100% {
-  }
-}
-@keyframes riseToLeft {
-  0% {
-    -webkit-transform: rotatez(0);
-            transform: rotatez(0);
-  }
-  100% {
-  }
-}
-
-.movieCoverOpen {
-  -webkit-animation: riseToLeft 2s ease-in-out;
-          animation: riseToLeft 2s ease-in-out;
-}
-
-.movieCoverClose {
-  -webkit-animation: riseToLeft 2s ease-in-out;
-          animation: riseToLeft 2s ease-in-out;
-  animation-direction: reverse;
-}
-
 .movieClosedState {
   -webkit-transform: rotatez(0);
           transform: rotatez(0);
@@ -455,26 +427,14 @@ select {
           transform: rotatez(-90deg);
 }
 
-.moviePlateCover, .dinnerPlateCover {
-  position: absolute;
-  width: 440px;
-  top: -36px;
-  left: 50%;
-  margin-left: -220px;
-  -webkit-clip-path: polygon(46.28% -0.72%, 53.72% -1.12%, 83% 44.29%, 95.05% 85.26%, 100.45% 88.81%, 100% 98.08%, 0px 100%, -0.64% 89.82%, 5.27% 85.48%, 14.58% 49.15%);
-          clip-path: polygon(46.28% -0.72%, 53.72% -1.12%, 83% 44.29%, 95.05% 85.26%, 100.45% 88.81%, 100% 98.08%, 0px 100%, -0.64% 89.82%, 5.27% 85.48%, 14.58% 49.15%);
+.dinnerClosedState {
+  -webkit-transform: rotatez(0);
+          transform: rotatez(0);
 }
 
-.moviePlateCover {
-  -webkit-transform-origin: -100% 50%;
-          transform-origin: -100% 50%;
-}
-
-.moviePlate, .dinnerPlate {
-  position: absolute;
-  width: 1000px;
-  top: 188px;
-  z-index: -1;
+.dinnerOpenState {
+  -webkit-transform: rotatez(90deg);
+          transform: rotatez(90deg);
 }
 
 .fakeCover {
@@ -489,10 +449,18 @@ select {
   top: 0;
   left: 50%;
   margin-left: -220px;
+  -webkit-transition: all 1.6s;
+  transition: all 1.6s;
+}
+
+.movieContainer .fakeCover {
   -webkit-transform-origin: -100% 50%;
           transform-origin: -100% 50%;
-  -webkit-transition: all 2s;
-  transition: all 2s;
+}
+
+.dinnerContainer .fakeCover {
+  -webkit-transform-origin: 200% 50%;
+          transform-origin: 200% 50%;
 }
 
 .fakeCover::after {
@@ -519,6 +487,13 @@ select {
   height: 10px;
   margin-left: -230px;
   background-color: #5a5a5a;
+}
+
+.moviePlate, .dinnerPlate {
+  position: absolute;
+  width: 1000px;
+  top: 188px;
+  z-index: -1;
 }
 
 .moviePlate {
