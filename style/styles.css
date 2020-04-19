@@ -250,13 +250,29 @@ html {
 
 header {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body {
   background-color: #F0FFFF;
   font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
-  margin: 25px 100px;
+}
+
+header, footer {
+  margin: 0 100px;
 }
 
 main {
@@ -267,7 +283,7 @@ main {
 
 h1 {
   font-family: 'Cinzel', serif;
-  font-size: 3rem;
+  font-size: 8rem;
   text-align: center;
 }
 
@@ -275,7 +291,7 @@ li {
   list-style-type: none;
 }
 
-option, .bell, select {
+option, button, select {
   background-color: #3366ff;
   color: white;
 }
@@ -293,7 +309,7 @@ select {
   transition: all 0.3s;
 }
 
-.bell {
+button {
   height: 54px;
   width: 54px;
   border: none;
@@ -304,7 +320,7 @@ select {
   transition: all 0.3s;
 }
 
-.bell:hover, .bell:focus, select:hover, select:focus {
+button:hover, button:focus, select:hover, select:focus {
   background-color: #002db3;
 }
 
@@ -362,7 +378,7 @@ select {
   }
 }
 
-.bell:hover i, .bell:focus i {
+button:hover i, button:focus i {
   -webkit-animation: wiggle 0.5s ease-in-out;
           animation: wiggle 0.5s ease-in-out;
 }

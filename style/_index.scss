@@ -4,15 +4,21 @@ html {
 
 header {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
     background-color: #F0FFFF;
     font-family: 'Montserrat', sans-serif;
     font-size: 2.8rem;
-    margin: 25px 100px ;
 }
 
+header, footer {
+    margin: 0 100px ;
+}
 main {
     height: calc(100vh - 50px);
     overflow: hidden;
@@ -21,7 +27,7 @@ main {
 
 h1 {
     font-family: 'Cinzel', serif;
-    font-size: 3rem;
+    font-size: 8rem;
     text-align: center;
 }
 
@@ -32,7 +38,7 @@ li {
 $primary-bg: #3366ff;
 $secondary-bg: #002db3;
 
-option, .bell, select {
+option, button, select {
     background-color: $primary-bg;
 color: white;
 }
@@ -48,7 +54,7 @@ select{
     transition: all 0.3s;
 }
 
-.bell {
+button {
     height: 54px;
     width: 54px;
     border: none;
@@ -58,7 +64,7 @@ select{
     transition: all 0.3s;
 }
 
-.bell:hover, .bell:focus, select:hover, select:focus {
+button:hover, button:focus, select:hover, select:focus {
     background-color: $secondary-bg;
 }
 
@@ -71,7 +77,7 @@ select{
     100% {transform: rotatez(0);}
 }
 
-.bell:hover i, .bell:focus i {
+button:hover i, button:focus i {
     animation: wiggle 0.5s ease-in-out; 
 } 
 

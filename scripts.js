@@ -250,16 +250,21 @@ quaranscene.rng = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
 };
 
+
 // Start app
 quaranscene.init = function() {
     // quaranscene.movieRequest();
     quaranscene.movieRequest(quaranscene.genre);
     // quaranscene.displayMovieResult(quaranscene.movieList);
+    $(".introBell").on("click", function() {
+      window.scrollTo({
+        top: 1200,
+        behavior: "smooth"
+      });
+    });
+
 };
 
-document.querySelector('select').scrollIntoView({
-  behavior: "smooth"
-})
 
 //document ready
 $(function() {
