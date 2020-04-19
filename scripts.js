@@ -168,33 +168,8 @@ console.log(
 
 //event listener for user ssubmit
 $('.bell').on('click', function () {
-  //open the covers to reveal suggestions, if its already open then close to show new suggestions
-  // if($('.moviePlateCover').hasClass('movieOpenState')) {
-  //   console.log("closing")
-  //   $('.moviePlateCover').removeClass('movieOpenState');
-  //   $('.moviePlateCover').removeClass('movieCoverOpen');
-  //   $('.moviePlateCover').addClass('movieCoverClose');
-  //   setTimeout(function () {
-  //     $(".moviePlateCover").addClass("movieClosedState");
-  //   }, 2000);
-  // }
-  //   //else we are alwas opening since the plate starts off as closed
-  //         console.log("opening");
-  //         $(".moviePlateCover").removeClass("movieClosedState");
-  //         $(".moviePlateCover").removeClass("movieCoverClose");
-  //         $(".moviePlateCover").addClass("movieCoverOpen");
-  //         setTimeout(function() {
-  //           $(".moviePlateCover").addClass("movieOpenState")
-  //         }, 2000);
 
-  // second attempt
-  
-  // if($('.movieContainer .fakeCover').hasClass('movieOpenState')) {
-  //   console.log("opend now closing")
-  //   $(".movieContainer .fakeCover").removeClass("movieOpenState");
-  //   $(".movieContainer .fakeCover").addClass("movieClosedState");
-  // }
-
+    //on itial load the result will be covered, so just remove the lid, otherwise cover the result and then remove to reveal
     if (!quaranscene.firstOpen) {
       quaranscene.firstOpen = true;
       quaranscene.movieRequest(quaranscene.genre);
@@ -203,19 +178,13 @@ $('.bell').on('click', function () {
     } else {
       $(".movieContainer .fakeCover").removeClass("movieOpenState");
       $(".movieContainer .fakeCover").addClass("movieClosedState");
-      quaranscene.movieRequest(quaranscene.genre);
       setTimeout(function() {
+        quaranscene.movieRequest(quaranscene.genre);
         $(".movieContainer .fakeCover").removeClass("movieClosedState");
         $(".movieContainer .fakeCover").addClass("movieOpenState");
       }, 2000)
       
     }
-  
-  // $(".moviePlateCover").removeClass("movieClosedState");
-  // $(".moviePlateCover").addClass("movieCoverOpen");
-  // setTimeout(function() {
-  //           $(".moviePlateCover").addClass("movieOpenState")
-  //         }, 2000);
 
 
   //make api call on click
