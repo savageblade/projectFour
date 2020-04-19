@@ -2,16 +2,21 @@ html {
     font-size: 62.5%;
 }
 
+header {
+    height: 100vh;
+}
+
 body {
     background-color: #F0FFFF;
     font-family: 'Montserrat', sans-serif;
     font-size: 2.8rem;
-    margin: 25px 100px;
+    margin: 25px 100px ;
 }
 
 main {
-    height: 100vh;
+    height: calc(100vh - 50px);
     overflow: hidden;
+    padding-bottom: 50px;
 }
 
 h1 {
@@ -103,9 +108,9 @@ select{
     padding-top: 33px;
 }
 
-.movieResult {
+// .movieResult {
 
-}
+// }
 
 .dinnerResult {
     padding: 0;
@@ -197,7 +202,7 @@ background: linear-gradient(90deg, rgba(157,157,157,1) 0%, rgba(57,57,57,1) 100%
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
     font-size: 1.6rem;
+    height: 50px;
+    margin-top: -50px;
 }

@@ -248,6 +248,10 @@ html {
   font-size: 62.5%;
 }
 
+header {
+  height: 100vh;
+}
+
 body {
   background-color: #F0FFFF;
   font-family: 'Montserrat', sans-serif;
@@ -256,8 +260,9 @@ body {
 }
 
 main {
-  height: 100vh;
+  height: calc(100vh - 50px);
   overflow: hidden;
+  padding-bottom: 50px;
 }
 
 h1 {
@@ -505,8 +510,8 @@ select {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
   font-size: 1.6rem;
+  height: 50px;
+  margin-top: -50px;
 }
 /*# sourceMappingURL=styles.css.map */

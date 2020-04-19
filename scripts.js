@@ -257,6 +257,10 @@ quaranscene.init = function() {
     // quaranscene.displayMovieResult(quaranscene.movieList);
 };
 
+document.querySelector('select').scrollIntoView({
+  behavior: "smooth"
+})
+
 //document ready
 $(function() {
     quaranscene.init();
