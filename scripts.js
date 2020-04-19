@@ -226,23 +226,29 @@ quaranscene.displayMovieResult = (movieList) => {
   //Add content to the DOM
 
   //append the movie results
-  let htmlToAppend = 
+  const movieToAppend = 
   `<h2>${quaranscene.movieTitle}</h2>
   <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">`;
+  
   $(".movieResult").empty();
-  $(".movieResult").append(htmlToAppend);
+  
+  setTimeout(function() {
+    $(".movieResult").append(movieToAppend).addClass('animated fadeIn slow');
+  }, 2000); 
 
 //append the dinner results
-  htmlToAppend = 
+  const foodToAppend = 
   `<h2>${quaranscene.filteredFood[0].food}</h2>
   <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`;
   
   $(".dinnerResult").empty();
-  $(".dinnerResult").append(htmlToAppend);
+  setTimeout(function() {
+    $(".dinnerResult").append(foodToAppend).addClass('animated fadeIn slow');
+  }, 2000)
   //append the credits
-  htmlToAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Plate cover. Food picture ${quaranscene.filteredFood[0].foodCredit}`
+  const creditToAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Plate cover. Food picture ${quaranscene.filteredFood[0].foodCredit}`
   $(".photoCredit").empty();
-  $(".photoCredit").append(htmlToAppend);
+  $(".photoCredit").append(creditToAppend);
 };
 
 //random number for index
