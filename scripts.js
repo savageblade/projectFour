@@ -9,6 +9,9 @@ quaranscene.baseImageURL = `https://image.tmdb.org/t/p/w500`;
 
 quaranscene.userSelection = "mystery";
 
+//deafult genre on load
+quaranscene.genre = 9648;
+
 //genre object with required genre_id param for the API
 quaranscene.genreOptions = {
   action: 28,
@@ -144,7 +147,11 @@ quaranscene.movieRequest = (id) => {
       with_genres: `${id}`,
     },
   }).then(function (result) {
+    console.log(id);
     quaranscene.movieList = result;
+    //when a result comes back, update the screen
+    quaranscene.displayMovieResult(quaranscene.movieList);
+    console.log(result);
   });
 }
 
@@ -152,15 +159,53 @@ quaranscene.movieRequest = (id) => {
 $('select').on('change', function () {
  quaranscene.userSelection = $(this).val();
 quaranscene.genre = quaranscene.genreOptions[quaranscene.userSelection];
+console.log(
+  "changed! userSelection: " + quaranscene.userSelection  + " q.genre: " + quaranscene.genre
+);
 })
 
 //event listener for user ssubmit
 $('.bell').on('click', function () {
- //make api call on click
- quaranscene.movieRequest(quaranscene.genre);
- quaranscene.displayMovieResult(quaranscene.movieList);
- $('.moviePlateCover').toggleClass('movieCoverOpen');
- 
+  //open the covers to reveal suggestions, if its already open then close to show new suggestions
+  // if($('.moviePlateCover').hasClass('movieOpenState')) {
+  //   console.log("closing")
+  //   $('.moviePlateCover').removeClass('movieOpenState');
+  //   $('.moviePlateCover').removeClass('movieCoverOpen');
+  //   $('.moviePlateCover').addClass('movieCoverClose');
+  //   setTimeout(function () {
+  //     $(".moviePlateCover").addClass("movieClosedState");
+  //   }, 2000);
+  // }
+  //   //else we are alwas opening since the plate starts off as closed
+  //         console.log("opening");
+  //         $(".moviePlateCover").removeClass("movieClosedState");
+  //         $(".moviePlateCover").removeClass("movieCoverClose");
+  //         $(".moviePlateCover").addClass("movieCoverOpen");
+  //         setTimeout(function() {
+  //           $(".moviePlateCover").addClass("movieOpenState")
+  //         }, 2000);
+
+  // second attempt
+  if($('.moviePlateCover').hasClass('movieOpenState')) {
+    $(".moviePlateCover").removeClass("movieOpenState");
+    $(".moviePlateCover").addClass("movieCoverClose"); 
+    setTimeout(function () {
+      $(".moviePlateCover").addClass("movieClosedState");
+    }, 2000);
+  }
+  $(".moviePlateCover").removeClass("movieClosedState");
+  $(".moviePlateCover").addClass("movieCoverOpen");
+  setTimeout(function() {
+            $(".moviePlateCover").addClass("movieOpenState")
+          }, 2000);
+
+
+  //make api call on click
+
+
+
+
+    quaranscene.movieRequest(quaranscene.genre);
 })
 
 //select movie title and poster from api array using random index
@@ -212,8 +257,8 @@ quaranscene.rng = (min, max) => {
 // Start app
 quaranscene.init = function() {
     // quaranscene.movieRequest();
-    quaranscene.movieRequest(9648);
-    quaranscene.displayMovieResult(quaranscene.movieList);
+    quaranscene.movieRequest(quaranscene.genre);
+    // quaranscene.displayMovieResult(quaranscene.movieList);
 };
 
 //document ready
