@@ -186,18 +186,18 @@ $('.bell').on('click', function () {
   //         }, 2000);
 
   // second attempt
-  if($('.moviePlateCover').hasClass('movieOpenState')) {
-    $(".moviePlateCover").removeClass("movieOpenState");
-    $(".moviePlateCover").addClass("movieCoverClose"); 
-    setTimeout(function () {
-      $(".moviePlateCover").addClass("movieClosedState");
-    }, 2000);
+  if($('.movieResult .fakeCover').hasClass('movieOpenState')) {
+    $(".movieResult .fakeCover").removeClass("movieOpenState");
+    $(".movieResult .fakeCover").addClass("movieClosedState");
   }
-  $(".moviePlateCover").removeClass("movieClosedState");
-  $(".moviePlateCover").addClass("movieCoverOpen");
-  setTimeout(function() {
-            $(".moviePlateCover").addClass("movieOpenState")
-          }, 2000);
+    $(".movieResult .fakeCover").removeClass("movieClosedState");
+    $(".movieResult .fakeCover").addClass("movieOpenState");
+  
+  // $(".moviePlateCover").removeClass("movieClosedState");
+  // $(".moviePlateCover").addClass("movieCoverOpen");
+  // setTimeout(function() {
+  //           $(".moviePlateCover").addClass("movieOpenState")
+  //         }, 2000);
 
 
   //make api call on click
@@ -222,32 +222,24 @@ quaranscene.displayMovieResult = (movieList) => {
   console.log(quaranscene.filteredFood[0].food);
   //Add content to the DOM
 
-  const htmlToAppend = `
-  <li class="movieResult"> 
-    <div class="moviePlate">
-      <img src="./assets/plateToRight.png" alt="A waiter wearing clean white shirt, a black vest and white gloves holding a silver platter to the right">
-    </div>
-    <div class="moviePlateCover">
-      <img src="./assets/plateCover.png" alt="A silver, domed shaped plate cover for food">
-    </div>
-    <h2>${quaranscene.movieTitle}</h2> <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">
-  </li> 
-  <li class="dinnerResult">
-    <div class="dinnerPlate">
-      <img src="./assets/plateToLeft.png"
-        alt="A waiter wearing clean white shirt, a black vest and white gloves holding a silver platter to the left">
-    </div>
-    <div class="dinnerPlateCover">
-      <img src="./assets/plateCover.png" alt="A silver, domed shaped plate cover for food">
-    </div>
-    <h2>${quaranscene.filteredFood[0].food}</h2>
-    <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">
-    </li>`;
-  const creditAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Plate cover. Food picture ${quaranscene.filteredFood[0].foodCredit}`
-  $(".resultUl").empty();
-  $(".resultUl").append(htmlToAppend);
+  //append the movie results
+  let htmlToAppend = 
+  `<h2>${quaranscene.movieTitle}</h2>
+  <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">`;
+  $(".movieResult").empty();
+  $(".movieResult").append(htmlToAppend);
+
+//append the dinner results
+  htmlToAppend = 
+  `<h2>${quaranscene.filteredFood[0].food}</h2>
+  <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`;
+  
+  $(".dinnerResult").empty();
+  $(".dinnerResult").append(htmlToAppend);
+  //append the credits
+  htmlToAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Plate cover. Food picture ${quaranscene.filteredFood[0].foodCredit}`
   $(".photoCredit").empty();
-  $(".photoCredit").append(creditAppend);
+  $(".photoCredit").append(htmlToAppend);
 };
 
 //random number for index

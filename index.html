@@ -33,7 +33,7 @@
                 <option value="fantasy">Fantasy</option>
                 <option value="history">History</option>
                 <option value="music">Music</option>
-                <option value="mystery" selected>Mystery</option>
+                <option selected value="mystery">Mystery</option>
                 <option value="romance">Romance</option>
                 <option value="scienceFiction">Sci Fi</option>
                 <option value="tvMovie">TV Movie</option>
@@ -52,23 +52,21 @@
         </ul>
 
         <ul class="resultUl">
-            <li class="movieResult">
+            <li class="movieContainer">
+                <div class="fakeCover"></div>
                 <div class="moviePlate">
                     <img src="./assets/plateToRight.png"
                         alt="A waiter wearing clean white shirt, a black vest and white gloves holding a silver platter to the right">
                 </div>
-                <div class="moviePlateCover movieClosedState">
-                    <img src="./assets/plateCover.png" alt="A silver, domed shaped plate cover for food">
-                </div>
+                <div class="movieResult"></div>
             </li>
-            <li class="dinnerResult">
+            <li class="dinnerContainer">
+                <div class="fakeCover"></div>
                 <div class="dinnerPlate">
                     <img src="./assets/plateToLeft.png"
                         alt="A waiter wearing clean white shirt, a black vest and white gloves holding a silver platter to the left">
                 </div>
-                <div class="dinnerPlateCover">
-                    <img src="./assets/plateCover.png" alt="A silver, domed shaped plate cover for food">
-                </div>
+                <div class="dinnerResult"></div>
             </li>
             
         </ul>
