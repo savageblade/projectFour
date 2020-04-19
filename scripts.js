@@ -246,7 +246,8 @@ quaranscene.displayMovieResult = (movieList) => {
   const creditAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Plate cover. Food picture ${quaranscene.filteredFood[0].foodCredit}`
   $(".resultUl").empty();
   $(".resultUl").append(htmlToAppend);
-  $("footer").append(creditAppend);
+  $(".photoCredit").empty();
+  $(".photoCredit").append(creditAppend);
 };
 
 //random number for index

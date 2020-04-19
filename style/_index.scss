@@ -6,7 +6,7 @@ body {
     background-color: #F0FFFF;
     font-family: 'Montserrat', sans-serif;
     font-size: 2.8rem;
-    margin: 100px;
+    margin: 25px 100px;
 }
 
 main {
@@ -92,9 +92,9 @@ select{
     transform-origin: -100% 50%;
 }
 
-.dinnerPlateCover {
+// .dinnerPlateCover {
     
-}
+// }
 
 .moviePlate, .dinnerPlate {
     position: absolute;
@@ -114,6 +114,6 @@ select{
 
 footer {
     position: absolute;
-    bottom:0;
+    bottom: 0;
     font-size: 1.6rem;
 }
