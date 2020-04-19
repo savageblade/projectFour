@@ -271,7 +271,7 @@ li {
 }
 
 option, .bell, select {
-  background-color: #F9F871;
+  background-color: #3366ff;
   color: white;
 }
 
@@ -300,7 +300,7 @@ select {
 }
 
 .bell:hover, .bell:focus, select:hover, select:focus {
-  background-color: #E32B2B;
+  background-color: #002db3;
 }
 
 @-webkit-keyframes wiggle {
@@ -489,6 +489,8 @@ select {
   top: 0;
   left: 50%;
   margin-left: -220px;
+  -webkit-transform-origin: -100% 50%;
+          transform-origin: -100% 50%;
   -webkit-transition: all 2s;
   transition: all 2s;
 }

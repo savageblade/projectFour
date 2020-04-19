@@ -24,8 +24,8 @@ li {
     list-style-type: none;
 }
 
-$primary-bg: #F9F871;
-$secondary-bg: #E32B2B;
+$primary-bg: #3366ff;
+$secondary-bg: #002db3;
 
 option, .bell, select {
     background-color: $primary-bg;
@@ -171,6 +171,7 @@ select{
     top: 0;
     left: 50%;
     margin-left: -220px;
+    transform-origin: -100% 50%;
     transition: all 2s;
 }
 
