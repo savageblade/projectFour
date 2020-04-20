@@ -19,7 +19,10 @@
         left: 50%;
         margin: -60px;
     }
-
+    
+    .movieResult {
+        width: 300px;
+    }
     .dinnerContainer .fakeCover,
     .dinnerPlate {
         display: none;
@@ -30,11 +33,6 @@
         left: 50%;
         top: 60px;
         z-index: -1;
-    }
-
-    .movieResult {
-        position: absolute;
-        left: -60%;
     }
 
     .movieCover {

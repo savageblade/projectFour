@@ -226,27 +226,44 @@ quaranscene.displayMovieResult = (movieList) => {
   //Add content to the DOM
 
   //append the movie results
-  const movieToAppend = 
+  const movieToAppend =
   `<h2>${quaranscene.movieTitle}</h2>
-  <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">`;
-  
+  <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">`
+  if ((window.innerWidth > 950)) {
   $(".movieResult").empty();
   
   setTimeout(function() {
     $(".movieResult").append(movieToAppend).addClass('animated fadeIn slow');
   }, 2000); 
-
+  };
 //append the dinner results
   const foodToAppend = 
-  `<h2>${quaranscene.filteredFood[0].food}</h2>
-  <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`;
-  
+    `<h2>${quaranscene.filteredFood[0].food}</h2>
+    <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`;
+  if ((window.innerWidth > 950)) {
   $(".dinnerResult").empty();
   setTimeout(function() {
     $(".dinnerResult").append(foodToAppend).addClass('animated fadeIn slow');
   }, 2000)
-  //append the credits
-  const creditToAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Food picture ${quaranscene.filteredFood[0].foodCredit}`
+  };
+  //append combined movie & dinner results for mobile
+  const combinedToAppend =
+  `<h2>${quaranscene.movieTitle}</h2>
+  <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">
+  <h2>${quaranscene.filteredFood[0].food}</h2>
+  <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`
+
+  if ((window.innerWidth <= 950)) {
+
+    $(".movieResult").empty();
+    $(".dinnerResult").empty();
+    setTimeout(function() {
+      $(".movieResult").append(combinedToAppend).addClass('animated fadeIn slow');
+    }, 2000); 
+  }
+    //append the credits
+  const creditToAppend = `<p>Photos used for Educational Purposes.</p>
+  <p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Food picture ${quaranscene.filteredFood[0].foodCredit}</p>`
   $(".photoCredit").empty();
   $(".photoCredit").append(creditToAppend);
 };
@@ -263,12 +280,18 @@ quaranscene.init = function() {
     quaranscene.movieRequest(quaranscene.genre);
     // quaranscene.displayMovieResult(quaranscene.movieList);
     $(".introBell").on("click", function() {
+      if ((window.innerWidth <= 950)) {
+        window.scrollTo({
+        top: 900,
+        behavior: "smooth"
+      })
+    } else {
       window.scrollTo({
-        top: 1200,
+        top: 1100,
         behavior: "smooth"
       });
-    });
-
+    };
+  });
 };
 
 
