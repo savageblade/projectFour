@@ -406,29 +406,29 @@ button:hover i, button:focus i {
 
 @-webkit-keyframes glow {
   to {
-    border-color: #AF3800;
-    -webkit-box-shadow: 0px 6px 18px 7px #AF3800;
-    box-shadow: 0px 6px 18px 7px #AF3800;
+    border-color: #759EB8;
+    -webkit-box-shadow: 0px 6px 18px 7px #759EB8;
+    box-shadow: 0px 6px 18px 7px #759EB8;
   }
 }
 
 @keyframes glow {
   to {
-    border-color: #AF3800;
-    -webkit-box-shadow: 0px 6px 18px 7px #AF3800;
-    box-shadow: 0px 6px 18px 7px #AF3800;
+    border-color: #759EB8;
+    -webkit-box-shadow: 0px 6px 18px 7px #759EB8;
+    box-shadow: 0px 6px 18px 7px #759EB8;
   }
 }
 
-.resultUl h2 {
-  font-size: 3rem;
+.resultUl h2, .resultUl .combined {
+  font-size: 2rem;
   width: 200px;
-  background-color: #DE6449;
+  background-color: #C5D5EA;
   position: absolute;
   top: 100%;
   left: 50%;
   margin-left: -100px;
-  color: white;
+  color: black;
   padding: 5px;
   border-radius: 5px;
   -webkit-animation: glow 1.25s infinite alternate;
@@ -438,6 +438,16 @@ button:hover i, button:focus i {
   transition: border 1.0s linear, -webkit-box-shadow 1.0s linear;
   transition: border 1.0s linear, box-shadow 1.0s linear;
   transition: border 1.0s linear, box-shadow 1.0s linear, -webkit-box-shadow 1.0s linear;
+}
+
+.resultUl h2 p, .resultUl .combined p {
+  margin: 0;
+}
+
+.resultUl .combined {
+  width: 300px;
+  margin-left: -150px;
+  top: 200%;
 }
 
 .resultUl li {
@@ -593,6 +603,9 @@ footer {
   }
   .movieResult {
     width: 300px;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
   }
   .dinnerContainer .fakeCover,
   .dinnerPlate {
@@ -603,6 +616,10 @@ footer {
     left: 50%;
     top: 60px;
     z-index: -1;
+  }
+  .fakeCover {
+    width: 370px;
+    margin-left: -185px;
   }
   .movieCover {
     z-index: 2;

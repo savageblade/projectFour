@@ -231,8 +231,9 @@ quaranscene.displayMovieResult = (movieList) => {
 
   //append the movie results
   const movieToAppend =
-  `<h2>${quaranscene.movieTitle}</h2>
+  `<h2>Movie: ${quaranscene.movieTitle}</h2>
   <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">`
+
   if ((window.innerWidth > 950)) {
   $(".movieResult").empty();
   
@@ -242,7 +243,7 @@ quaranscene.displayMovieResult = (movieList) => {
   };
 //append the dinner results
   const foodToAppend = 
-    `<h2>${quaranscene.filteredFood[0].food}</h2>
+    `<h2>Food: ${quaranscene.filteredFood[0].food}</h2>
     <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`;
   if ((window.innerWidth > 950)) {
   $(".dinnerResult").empty();
@@ -250,12 +251,12 @@ quaranscene.displayMovieResult = (movieList) => {
     $(".dinnerResult").append(foodToAppend).addClass('resultsFadeIn');
   }, 1250)
   };
+
   //append combined movie & dinner results for mobile
-  const combinedToAppend =
-  `<h2>${quaranscene.movieTitle}</h2>
+  const combinedToAppend = `<div class="combined"> <p>Movie: ${quaranscene.movieTitle}</p>
+  <p>Food: ${quaranscene.filteredFood[0].food}</p> </div>
   <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">
-  <h2>${quaranscene.filteredFood[0].food}</h2>
-  <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`
+  <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`;
 
   if ((window.innerWidth <= 950)) {
 
@@ -264,6 +265,8 @@ quaranscene.displayMovieResult = (movieList) => {
     setTimeout(function() {
       $(".movieResult").append(combinedToAppend).addClass('resultsFadeIn');
     }, 1250); 
+
+
   }
     //append the credits
   const creditToAppend = `<p>Photos used for Educational Purposes.</p>

@@ -39,6 +39,8 @@ li {
 
 $primary-bg: #DE6449;
 $secondary-bg: #AF3800;
+$text-bg: #C5D5EA;
+$shadowColor: #759EB8;
 
 
 option, button, select {
@@ -98,28 +100,37 @@ button:hover i, button:focus i {
 
     @keyframes glow {
         to {
-            border-color: $secondary-bg;
-            -webkit-box-shadow: 0px 6px 18px 7px $secondary-bg;
-            -moz-box-shadow: 0px 6px 18px 7px $secondary-bg;
-            box-shadow: 0px 6px 18px 7px $secondary-bg;
+            border-color: $shadowColor;
+            -webkit-box-shadow: 0px 6px 18px 7px $shadowColor;
+            -moz-box-shadow: 0px 6px 18px 7px $shadowColor;
+            box-shadow: 0px 6px 18px 7px $shadowColor;
         }
     }
 
-    h2 {
-        font-size: 3rem;
+    h2, .combined {
+        p {
+            margin: 0;
+        }
+        font-size: 2rem;
         width: 200px;
-        background-color: $primary-bg;
+        background-color: $text-bg;
         position: absolute;
         top: 100%;
         left: 50%;
         margin-left: -100px;
-        color: white;
+        color: black;
         padding: 5px;
         border-radius: 5px;
         animation: glow 1.25s infinite alternate;  
         -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
         -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
             transition: border 1.0s linear, box-shadow 1.0s linear;
+    }
+
+    .combined {
+        width: 300px;
+        margin-left: -150px;
+        top: 200%;
     }
 
     li {
