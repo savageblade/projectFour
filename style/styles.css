@@ -542,15 +542,28 @@ footer {
   h1 {
     font-size: 6rem;
   }
+  .resultUl {
+    -webkit-box-pack: inherit;
+        -ms-flex-pack: inherit;
+            justify-content: inherit;
+  }
+  .movieContainer {
+    left: 50%;
+    margin: -60px;
+  }
   .dinnerContainer .fakeCover,
   .dinnerPlate {
     display: none;
   }
   .dinnerContainer {
     position: absolute;
-    right: 0;
+    left: 50%;
     top: 60px;
     z-index: -1;
+  }
+  .movieResult {
+    position: absolute;
+    left: -60%;
   }
   .movieCover {
     z-index: 2;
