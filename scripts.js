@@ -149,11 +149,7 @@ quaranscene.movieRequest = (id) => {
       with_genres: `${id}`,
     },
   }).then(function (result) {
-    console.log(id);
     quaranscene.movieList = result;
-    //when a result comes back, update the screen
-    // quaranscene.displayMovieResult(quaranscene.movieList);
-    console.log(result);
   });
 }
 
@@ -161,9 +157,6 @@ quaranscene.movieRequest = (id) => {
 $('select').on('change', function () {
  quaranscene.userSelection = $(this).val();
 quaranscene.genre = quaranscene.genreOptions[quaranscene.userSelection];
-console.log(
-  "changed! userSelection: " + quaranscene.userSelection  + " q.genre: " + quaranscene.genre
-);
 })
 
 //event listener for user ssubmit
@@ -217,16 +210,13 @@ $('.bell').on('click', function () {
 
 //select movie title and poster from api array using random index
 quaranscene.displayMovieResult = (movieList) => {
-  console.log(movieList);
   const movieRNG = quaranscene.rng(0, movieList["results"].length - 1 );
-  console.log("this is random " + movieRNG);
   quaranscene.movieTitle = movieList.results[movieRNG].title;
   quaranscene.moviePoster = movieList.results[movieRNG].poster_path;
   //Retrieve genre matching food pairing
   quaranscene.filteredFood = quaranscene.cuisinePairing.filter((data) => {
     return data.genre === quaranscene.userSelection;
   });
-  console.log(quaranscene.filteredFood[0].food);
   //Add content to the DOM
 
   //append the movie results
