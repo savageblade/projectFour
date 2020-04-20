@@ -174,6 +174,8 @@ $('.bell').on('click', function () {
     //on initial web site load, the covers will be closed so just reveal the content
     if (!quaranscene.firstOpen) {
       quaranscene.firstOpen = true;
+        $(".dinnerResult").removeClass("resultsFadeIn");
+        $(".movieResult").removeClass("resultsFadeIn");
         quaranscene.displayMovieResult(quaranscene.movieList);
         //allow time for the movie result to get images to display
       setTimeout(function() {
@@ -190,6 +192,8 @@ $('.bell').on('click', function () {
       $(".dinnerContainer .fakeCover").addClass("dinnerClosedState");
       //allow time for the animation to "close" the lid before updating the images
       setTimeout(function() {
+        $('.dinnerResult').removeClass('resultsFadeIn');
+        $('.movieResult').removeClass('resultsFadeIn');
         quaranscene.displayMovieResult(quaranscene.movieList);
       }, 1600);
       //give time to keep the lid closed while images are updated
@@ -227,39 +231,42 @@ quaranscene.displayMovieResult = (movieList) => {
 
   //append the movie results
   const movieToAppend =
-  `<h2>${quaranscene.movieTitle}</h2>
+  `<h2>Movie: ${quaranscene.movieTitle}</h2>
   <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">`
+
   if ((window.innerWidth > 950)) {
   $(".movieResult").empty();
   
   setTimeout(function() {
-    $(".movieResult").append(movieToAppend).addClass('animated fadeIn slow');
-  }, 2000); 
+    $(".movieResult").append(movieToAppend).addClass('resultsFadeIn');
+  }, 1250); 
   };
 //append the dinner results
   const foodToAppend = 
-    `<h2>${quaranscene.filteredFood[0].food}</h2>
+    `<h2>Food: ${quaranscene.filteredFood[0].food}</h2>
     <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`;
   if ((window.innerWidth > 950)) {
   $(".dinnerResult").empty();
   setTimeout(function() {
-    $(".dinnerResult").append(foodToAppend).addClass('animated fadeIn slow');
-  }, 2000)
+    $(".dinnerResult").append(foodToAppend).addClass('resultsFadeIn');
+  }, 1250)
   };
+
   //append combined movie & dinner results for mobile
-  const combinedToAppend =
-  `<h2>${quaranscene.movieTitle}</h2>
+  const combinedToAppend = `<div class="combined"> <p>Movie: ${quaranscene.movieTitle}</p>
+  <p>Food: ${quaranscene.filteredFood[0].food}</p> </div>
   <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">
-  <h2>${quaranscene.filteredFood[0].food}</h2>
-  <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`
+  <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`;
 
   if ((window.innerWidth <= 950)) {
 
     $(".movieResult").empty();
     $(".dinnerResult").empty();
     setTimeout(function() {
-      $(".movieResult").append(combinedToAppend).addClass('animated fadeIn slow');
-    }, 2000); 
+      $(".movieResult").append(combinedToAppend).addClass('resultsFadeIn');
+    }, 1250); 
+
+
   }
     //append the credits
   const creditToAppend = `<p>Photos used for Educational Purposes.</p>

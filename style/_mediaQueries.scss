@@ -22,6 +22,9 @@
     
     .movieResult {
         width: 300px;
+        position: absolute;
+        left: 50%;
+        margin-left: -150px;
     }
     .dinnerContainer .fakeCover,
     .dinnerPlate {
@@ -33,6 +36,11 @@
         left: 50%;
         top: 60px;
         z-index: -1;
+    }
+
+    .fakeCover {
+        width: 370px;
+        margin-left: -185px;
     }
 
     .movieCover {
