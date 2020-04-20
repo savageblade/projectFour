@@ -1,4 +1,11 @@
 @media (max-width: 950px) {
+    body {
+        font-size: 2rem;
+    }
+
+    h1 {
+        font-size: 6rem;
+    }
     .dinnerContainer .fakeCover,
     .dinnerPlate {
         display: none;

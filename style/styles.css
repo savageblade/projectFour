@@ -292,7 +292,7 @@ li {
 }
 
 option, button, select {
-  background-color: #3366ff;
+  background-color: #DE6449;
   color: white;
 }
 
@@ -321,7 +321,7 @@ button {
 }
 
 button:hover, button:focus, select:hover, select:focus {
-  background-color: #002db3;
+  background-color: #AF3800;
 }
 
 @-webkit-keyframes wiggle {
@@ -532,6 +532,12 @@ footer {
 }
 
 @media (max-width: 950px) {
+  body {
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 6rem;
+  }
   .dinnerContainer .fakeCover,
   .dinnerPlate {
     display: none;
