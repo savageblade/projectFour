@@ -268,7 +268,8 @@ header {
 body {
   background-color: #F0FFFF;
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
+  text-align: center;
 }
 
 header, footer {
@@ -402,8 +403,40 @@ button:hover i, button:focus i {
       justify-content: space-around;
 }
 
+@-webkit-keyframes glow {
+  to {
+    border-color: #AF3800;
+    -webkit-box-shadow: 0px 6px 18px 7px #AF3800;
+    box-shadow: 0px 6px 18px 7px #AF3800;
+  }
+}
+
+@keyframes glow {
+  to {
+    border-color: #AF3800;
+    -webkit-box-shadow: 0px 6px 18px 7px #AF3800;
+    box-shadow: 0px 6px 18px 7px #AF3800;
+  }
+}
+
 .resultUl h2 {
-  display: none;
+  font-size: 3rem;
+  width: 200px;
+  background-color: #DE6449;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -100px;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-animation: glow 1.25s infinite alternate;
+          animation: glow 1.25s infinite alternate;
+  -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
+  -webkit-transition: border 1.0s linear, -webkit-box-shadow 1.0s linear;
+  transition: border 1.0s linear, -webkit-box-shadow 1.0s linear;
+  transition: border 1.0s linear, box-shadow 1.0s linear;
+  transition: border 1.0s linear, box-shadow 1.0s linear, -webkit-box-shadow 1.0s linear;
 }
 
 .resultUl li {
@@ -533,7 +566,7 @@ button:hover i, button:focus i {
 }
 
 footer {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   height: 50px;
   margin-top: -50px;
 }
@@ -542,8 +575,20 @@ footer {
   body {
     font-size: 2rem;
   }
+  header, footer {
+    margin: 0 50px;
+  }
   h1 {
     font-size: 6rem;
+  }
+  .resultUl {
+    -webkit-box-pack: inherit;
+        -ms-flex-pack: inherit;
+            justify-content: inherit;
+  }
+  .movieContainer {
+    left: 50%;
+    margin: -60px;
   }
   .dinnerContainer .fakeCover,
   .dinnerPlate {
@@ -551,12 +596,28 @@ footer {
   }
   .dinnerContainer {
     position: absolute;
-    right: 325px;
+    left: 50%;
     top: 60px;
     z-index: -1;
   }
+  .movieResult {
+    position: absolute;
+    left: -60%;
+  }
   .movieCover {
     z-index: 2;
+  }
+  footer {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 1.8rem;
+  }
+  h1 {
+    font-size: 5rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

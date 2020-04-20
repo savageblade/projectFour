@@ -3,9 +3,23 @@
         font-size: 2rem;
     }
 
+    header, footer {
+        margin: 0 50px;
+    }
+
     h1 {
         font-size: 6rem;
     }
+
+    .resultUl {
+        justify-content: inherit;
+    }
+
+    .movieContainer {
+        left: 50%;
+        margin: -60px;
+    }
+
     .dinnerContainer .fakeCover,
     .dinnerPlate {
         display: none;
@@ -13,14 +27,33 @@
 
     .dinnerContainer {
         position: absolute;
-        right: 325px;
+        left: 50%;
         top: 60px;
         z-index: -1;
+    }
+
+    .movieResult {
+        position: absolute;
+        left: -60%;
     }
 
     .movieCover {
         z-index: 2;
     }
 
+    footer {
+        font-size: 1.4rem;
+    }
     
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 1.8rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
 }

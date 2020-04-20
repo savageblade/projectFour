@@ -238,7 +238,7 @@ quaranscene.displayMovieResult = (movieList) => {
   
   setTimeout(function() {
     $(".movieResult").append(movieToAppend).addClass('resultsFadeIn');
-  }, 2000); 
+  }, 1250); 
 
 //append the dinner results
   const foodToAppend = 
@@ -248,9 +248,9 @@ quaranscene.displayMovieResult = (movieList) => {
   $(".dinnerResult").empty();
   setTimeout(function() {
     $(".dinnerResult").append(foodToAppend).addClass('resultsFadeIn');
-  }, 2000)
+  }, 1250)
   //append the credits
-  const creditToAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Plate cover. Food picture ${quaranscene.filteredFood[0].foodCredit}`
+  const creditToAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Food picture ${quaranscene.filteredFood[0].foodCredit}`
   $(".photoCredit").empty();
   $(".photoCredit").append(creditToAppend);
 };

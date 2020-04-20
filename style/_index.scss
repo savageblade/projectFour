@@ -13,7 +13,8 @@ header {
 body {
     background-color: #F0FFFF;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2.8rem;
+    font-size: 2.4rem;
+    text-align: center;
 }
 
 header, footer {
@@ -92,8 +93,31 @@ button:hover i, button:focus i {
     width: 100%;
     display: flex;
     justify-content: space-around;
+
+    @keyframes glow {
+        to {
+            border-color: $secondary-bg;
+            -webkit-box-shadow: 0px 6px 18px 7px $secondary-bg;
+            -moz-box-shadow: 0px 6px 18px 7px $secondary-bg;
+            box-shadow: 0px 6px 18px 7px $secondary-bg;
+        }
+    }
+
     h2 {
-        display: none;
+        font-size: 3rem;
+        width: 200px;
+        background-color: $primary-bg;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -100px;
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        animation: glow 1.25s infinite alternate;  
+        -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
+        -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
+            transition: border 1.0s linear, box-shadow 1.0s linear;
     }
 
     li {
@@ -211,7 +235,7 @@ background: linear-gradient(90deg, rgba(157,157,157,1) 0%, rgba(57,57,57,1) 100%
 }
 
 footer {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     height: 50px;
     margin-top: -50px;
 }
