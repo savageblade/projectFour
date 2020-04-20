@@ -20,6 +20,7 @@ body {
 header, footer {
     margin: 0 100px ;
 }
+
 main {
     height: calc(100vh - 50px);
     overflow: hidden;
@@ -87,6 +88,7 @@ button:hover i, button:focus i {
     display: flex;
     width: 100%;
     justify-content: center;
+    margin-bottom: 100px;
 }
 
 .resultUl {

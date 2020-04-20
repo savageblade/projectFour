@@ -392,6 +392,7 @@ button:hover i, button:focus i {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 100px;
 }
 
 .resultUl {
@@ -590,6 +591,9 @@ footer {
     left: 50%;
     margin: -60px;
   }
+  .movieResult {
+    width: 300px;
+  }
   .dinnerContainer .fakeCover,
   .dinnerPlate {
     display: none;
@@ -599,10 +603,6 @@ footer {
     left: 50%;
     top: 60px;
     z-index: -1;
-  }
-  .movieResult {
-    position: absolute;
-    left: -60%;
   }
   .movieCover {
     z-index: 2;
