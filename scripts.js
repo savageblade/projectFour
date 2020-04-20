@@ -174,6 +174,8 @@ $('.bell').on('click', function () {
     //on initial web site load, the covers will be closed so just reveal the content
     if (!quaranscene.firstOpen) {
       quaranscene.firstOpen = true;
+        $(".dinnerResult").removeClass("resultsFadeIn");
+        $(".movieResult").removeClass("resultsFadeIn");
         quaranscene.displayMovieResult(quaranscene.movieList);
         //allow time for the movie result to get images to display
       setTimeout(function() {
@@ -190,6 +192,8 @@ $('.bell').on('click', function () {
       $(".dinnerContainer .fakeCover").addClass("dinnerClosedState");
       //allow time for the animation to "close" the lid before updating the images
       setTimeout(function() {
+        $('.dinnerResult').removeClass('resultsFadeIn');
+        $('.movieResult').removeClass('resultsFadeIn');
         quaranscene.displayMovieResult(quaranscene.movieList);
       }, 1600);
       //give time to keep the lid closed while images are updated
@@ -233,7 +237,7 @@ quaranscene.displayMovieResult = (movieList) => {
   $(".movieResult").empty();
   
   setTimeout(function() {
-    $(".movieResult").append(movieToAppend).addClass('animated fadeIn slow');
+    $(".movieResult").append(movieToAppend).addClass('resultsFadeIn');
   }, 2000); 
 
 //append the dinner results
@@ -243,7 +247,7 @@ quaranscene.displayMovieResult = (movieList) => {
   
   $(".dinnerResult").empty();
   setTimeout(function() {
-    $(".dinnerResult").append(foodToAppend).addClass('animated fadeIn slow');
+    $(".dinnerResult").append(foodToAppend).addClass('resultsFadeIn');
   }, 2000)
   //append the credits
   const creditToAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Plate cover. Food picture ${quaranscene.filteredFood[0].foodCredit}`
