@@ -3,6 +3,10 @@
         font-size: 2rem;
     }
 
+    header, footer {
+        margin: 0 50px;
+    }
+
     h1 {
         font-size: 6rem;
     }
@@ -13,7 +17,7 @@
 
     .dinnerContainer {
         position: absolute;
-        right: 325px;
+        right: 0;
         top: 60px;
         z-index: -1;
     }
@@ -22,5 +26,19 @@
         z-index: 2;
     }
 
+    footer {
+        font-size: 1.4rem;
+    }
     
+}
+
+@media (max-width: 500px) {
+    body {
+        font-size: 1.8rem;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
 }

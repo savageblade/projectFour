@@ -246,7 +246,7 @@ quaranscene.displayMovieResult = (movieList) => {
     $(".dinnerResult").append(foodToAppend).addClass('animated fadeIn slow');
   }, 2000)
   //append the credits
-  const creditToAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Plate cover. Food picture ${quaranscene.filteredFood[0].foodCredit}`
+  const creditToAppend = `<p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Food picture ${quaranscene.filteredFood[0].foodCredit}`
   $(".photoCredit").empty();
   $(".photoCredit").append(creditToAppend);
 };
