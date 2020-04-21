@@ -194,7 +194,7 @@ quaranscene.movieRequest = (id) => {
   $.ajax({
     url: quaranscene.baseURL,
     method: "GET",
-    dataType: "json",
+    dataType: "jsonp",
     data: {
       api_key: quaranscene.apiKey,
       language: "en-US",
