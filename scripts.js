@@ -3,15 +3,16 @@ const reelMealApp = {};
 //name space variables
 reelMealApp.apiKey = 'ffb95a5b116cb8ae246c7c6f51c94ed6'; //the apiKey
 
-reelMealApp.baseURL = `https://api.themoviedb.org/3/discover/movie/`;
+reelMealApp.baseURL = `https://api.themoviedb.org/3/discover/movie/`; //moviedb api base url
 
-reelMealApp.baseImageURL = `https://image.tmdb.org/t/p/w500`;
+reelMealApp.baseImageURL = `https://image.tmdb.org/t/p/w500`; //base image url
 
-reelMealApp.userSelection = "mystery";
+reelMealApp.userSelection = "mystery"; // the user selection
 
-reelMealApp.firstOpen = false;
+// flag to check if its the initial app load (cover is resting)
+reelMealApp.firstOpen = false; 
 
-//deafult genre on load
+//default genre on load
 reelMealApp.genre = 9648;
 
 //genre object with required genre_id param for the API
@@ -37,7 +38,7 @@ reelMealApp.genreOptions = {
   western: 37
 }
 
-//food array
+//food array with genre, the type of food, food alt text and original image credit
 reelMealApp.cuisinePairing = [
   {
     genre: "action",
@@ -189,7 +190,7 @@ reelMealApp.cuisinePairing = [
   },
 ];
 
-//ajax call to the API
+//ajax call to the API @param the id of the movie genre user has selected
 reelMealApp.movieRequest = (id) => {
   $.ajax({
     url: reelMealApp.baseURL,
@@ -202,19 +203,21 @@ reelMealApp.movieRequest = (id) => {
       with_genres: `${id}`,
     },
   }).then(function (result) {
+    //once we recieve the movies from api call, store them into a movie array
     reelMealApp.movieList = result;
   });
 }
 
 //event listener for user selection 
 $('select').on('change', function () {
- reelMealApp.userSelection = $(this).val();
-reelMealApp.genre = reelMealApp.genreOptions[reelMealApp.userSelection];
+  reelMealApp.userSelection = $(this).val();
+  reelMealApp.genre = reelMealApp.genreOptions[reelMealApp.userSelection];
 })
 
-//event listener for user ssubmit
+//event listener for user submit
 $('.bell').on('click', function () {
-  //make api call on click
+  // on click,
+  //play ring sound effect 
   $('#ring')[0].volume = 0.15;
   $('#ring')[0].play();
     //make the movie request
@@ -222,6 +225,7 @@ $('.bell').on('click', function () {
     //on initial web site load, the covers will be closed so just reveal the content
     if (!reelMealApp.firstOpen) {
       reelMealApp.firstOpen = true;
+      // fade in the results
         $(".dinnerResult").removeClass("resultsFadeIn");
         $(".movieResult").removeClass("resultsFadeIn");
         reelMealApp.displayMovieResult(reelMealApp.movieList);
@@ -257,7 +261,7 @@ $('.bell').on('click', function () {
     }
 })
 
-//select movie title and poster from api array using random index
+//select movie title and poster from api array using random index @param the movie array
 reelMealApp.displayMovieResult = (movieList) => {
   const movieRNG = reelMealApp.rng(0, movieList["results"].length - 1 );
   reelMealApp.movieTitle = movieList.results[movieRNG].title;
@@ -271,8 +275,9 @@ reelMealApp.displayMovieResult = (movieList) => {
   //append the movie results
   const movieToAppend =
   `<h2>Movie: ${reelMealApp.movieTitle}</h2>
-  <img src="${reelMealApp.baseImageURL}${reelMealApp.moviePoster}" alt="">`
+  <img src="${reelMealApp.baseImageURL}${reelMealApp.moviePoster}" alt="">`;
 
+  //desktop image handler
   if ((window.innerWidth > 950)) {
   $(".movieResult").empty();
   
@@ -297,15 +302,13 @@ reelMealApp.displayMovieResult = (movieList) => {
   <img src="${reelMealApp.baseImageURL}${reelMealApp.moviePoster}" alt="">
   <img src="${reelMealApp.filteredFood[0].foodImage}" alt="${reelMealApp.filteredFood[0].foodAlt}">`;
 
+  // mobile image update handler
   if ((window.innerWidth <= 950)) {
-
     $(".movieResult").empty();
     $(".dinnerResult").empty();
     setTimeout(function() {
       $(".movieResult").append(combinedToAppend).addClass('resultsFadeIn');
     }, 1250); 
-
-
   }
     //append the credits
   const creditToAppend = `<p>Photos used for Educational Purposes.</p>
@@ -325,8 +328,10 @@ reelMealApp.init = function() {
     reelMealApp.movieRequest(reelMealApp.genre);
     // reelMealApp.displayMovieResult(reelMealApp.movieList);
     $(".introBell").on("click", function() {
+      // play ring sound
       $("#ring")[0].volume = 0.15;
       $("#ring")[0].play();
+      // various scroll heights
       if ((window.innerWidth <= 750)) {
         document.getElementById("genreSelection").focus({ preventScroll: false });
         window.scrollTo({
@@ -348,7 +353,6 @@ reelMealApp.init = function() {
     };
   });
 };
-
 
 //document ready
 $(function() {
