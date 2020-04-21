@@ -6,48 +6,48 @@ Project 4
 
 Summary
 
-Quaranscene Cuisine
+reelMealApp Cuisine
 
 We are using the Movie Database API to SERVE users a random movie based on a genre selection and provide a paired cuisine. 
 
 // Create app namespace to hold all methods
-const quaransceneApp = {};
+const reelMealAppApp = {};
 
-//Create array of genres that is a property of the QuaransceneApp, each genre has a property of ONE cuisine associated with it
-QuaransceneApp.genres = [];
+//Create array of genres that is a property of the reelMealAppApp, each genre has a property of ONE cuisine associated with it
+reelMealAppApp.genres = [];
 
 // Collect user input from a selection of genres options matched to the array. 
-QuaransceneApp.collectInfo = function() {};
+reelMealAppApp.collectInfo = function() {};
 
 // Get submit event through a button with bell icon
-QuaransceneApp.submit = function() {}
+reelMealAppApp.submit = function() {}
 
 //Save selected value as a variable
 Let choosenOne = $(‘option’).on(‘click’, function () {}).val()
 
 // Make AJAX request with saved variable
-QuaransceneApp.getInfo = function() {};
+reelMealAppApp.getInfo = function() {};
 
 // Save the response data into a variable 
-QuaransceneApp.saveResponse = function() {};
+reelMealAppApp.saveResponse = function() {};
 
 //Upon receiving data, randomize the possible results with the input genre
-QuaransceneApp.randomize = function() {};
+reelMealAppApp.randomize = function() {};
 
 //Save the randomized values into a variable
-QuaransceneApp.saveVariable = function() {};
+reelMealAppApp.saveVariable = function() {};
 
 //After getting the randomized result, pair it with ITS cuisine option from the cuisine array
-QuaransceneApp.pair = function() {};
+reelMealAppApp.pair = function() {};
 
 // Display both movie variable and cuisine on the page
-QuaransceneApp.displayInfo = function() {};
+reelMealAppApp.displayInfo = function() {};
 
 // Start app
-QuaransceneApp.init = function() {};
+reelMealAppApp.init = function() {};
 
 $(function() {
-    QuaransceneApp.init();
+    reelMealAppApp.init();
 });
 
 

@@ -1,21 +1,21 @@
-const quaranscene = {};
+const reelMealApp = {};
 
 //name space variables
-quaranscene.apiKey = 'ffb95a5b116cb8ae246c7c6f51c94ed6'; //the apiKey
+reelMealApp.apiKey = 'ffb95a5b116cb8ae246c7c6f51c94ed6'; //the apiKey
 
-quaranscene.baseURL = `https://api.themoviedb.org/3/discover/movie/`;
+reelMealApp.baseURL = `https://api.themoviedb.org/3/discover/movie/`;
 
-quaranscene.baseImageURL = `https://image.tmdb.org/t/p/w500`;
+reelMealApp.baseImageURL = `https://image.tmdb.org/t/p/w500`;
 
-quaranscene.userSelection = "mystery";
+reelMealApp.userSelection = "mystery";
 
-quaranscene.firstOpen = false;
+reelMealApp.firstOpen = false;
 
 //deafult genre on load
-quaranscene.genre = 9648;
+reelMealApp.genre = 9648;
 
 //genre object with required genre_id param for the API
-quaranscene.genreOptions = {
+reelMealApp.genreOptions = {
   action: 28,
   adventure: 12,
   animation: 16,
@@ -38,7 +38,7 @@ quaranscene.genreOptions = {
 }
 
 //food array
-quaranscene.cuisinePairing = [
+reelMealApp.cuisinePairing = [
   {
     genre: "action",
     food: "Pizza",
@@ -190,26 +190,26 @@ quaranscene.cuisinePairing = [
 ];
 
 //ajax call to the API
-quaranscene.movieRequest = (id) => {
+reelMealApp.movieRequest = (id) => {
   $.ajax({
-    url: quaranscene.baseURL,
+    url: reelMealApp.baseURL,
     method: "GET",
     dataType: "jsonp",
     data: {
-      api_key: quaranscene.apiKey,
+      api_key: reelMealApp.apiKey,
       language: "en-US",
       include_adult: false,
       with_genres: `${id}`,
     },
   }).then(function (result) {
-    quaranscene.movieList = result;
+    reelMealApp.movieList = result;
   });
 }
 
 //event listener for user selection 
 $('select').on('change', function () {
- quaranscene.userSelection = $(this).val();
-quaranscene.genre = quaranscene.genreOptions[quaranscene.userSelection];
+ reelMealApp.userSelection = $(this).val();
+reelMealApp.genre = reelMealApp.genreOptions[reelMealApp.userSelection];
 })
 
 //event listener for user ssubmit
@@ -218,13 +218,13 @@ $('.bell').on('click', function () {
   $('#ring')[0].volume = 0.15;
   $('#ring')[0].play();
     //make the movie request
-    quaranscene.movieRequest(quaranscene.genre);
+    reelMealApp.movieRequest(reelMealApp.genre);
     //on initial web site load, the covers will be closed so just reveal the content
-    if (!quaranscene.firstOpen) {
-      quaranscene.firstOpen = true;
+    if (!reelMealApp.firstOpen) {
+      reelMealApp.firstOpen = true;
         $(".dinnerResult").removeClass("resultsFadeIn");
         $(".movieResult").removeClass("resultsFadeIn");
-        quaranscene.displayMovieResult(quaranscene.movieList);
+        reelMealApp.displayMovieResult(reelMealApp.movieList);
         //allow time for the movie result to get images to display
       setTimeout(function() {
         $(".movieContainer .fakeCover").removeClass("movieClosedState");
@@ -245,7 +245,7 @@ $('.bell').on('click', function () {
       setTimeout(function() {
         $('.dinnerResult').removeClass('resultsFadeIn');
         $('.movieResult').removeClass('resultsFadeIn');
-        quaranscene.displayMovieResult(quaranscene.movieList);
+        reelMealApp.displayMovieResult(reelMealApp.movieList);
       }, 1600);
       //give time to keep the lid closed while images are updated
       setTimeout(function() {
@@ -258,20 +258,20 @@ $('.bell').on('click', function () {
 })
 
 //select movie title and poster from api array using random index
-quaranscene.displayMovieResult = (movieList) => {
-  const movieRNG = quaranscene.rng(0, movieList["results"].length - 1 );
-  quaranscene.movieTitle = movieList.results[movieRNG].title;
-  quaranscene.moviePoster = movieList.results[movieRNG].poster_path;
+reelMealApp.displayMovieResult = (movieList) => {
+  const movieRNG = reelMealApp.rng(0, movieList["results"].length - 1 );
+  reelMealApp.movieTitle = movieList.results[movieRNG].title;
+  reelMealApp.moviePoster = movieList.results[movieRNG].poster_path;
   //Retrieve genre matching food pairing
-  quaranscene.filteredFood = quaranscene.cuisinePairing.filter((data) => {
-    return data.genre === quaranscene.userSelection;
+  reelMealApp.filteredFood = reelMealApp.cuisinePairing.filter((data) => {
+    return data.genre === reelMealApp.userSelection;
   });
   //Add content to the DOM
 
   //append the movie results
   const movieToAppend =
-  `<h2>Movie: ${quaranscene.movieTitle}</h2>
-  <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">`
+  `<h2>Movie: ${reelMealApp.movieTitle}</h2>
+  <img src="${reelMealApp.baseImageURL}${reelMealApp.moviePoster}" alt="">`
 
   if ((window.innerWidth > 950)) {
   $(".movieResult").empty();
@@ -282,8 +282,8 @@ quaranscene.displayMovieResult = (movieList) => {
   };
 //append the dinner results
   const foodToAppend = 
-    `<h2>Food: ${quaranscene.filteredFood[0].food}</h2>
-    <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`;
+    `<h2>Food: ${reelMealApp.filteredFood[0].food}</h2>
+    <img src="${reelMealApp.filteredFood[0].foodImage}" alt="${reelMealApp.filteredFood[0].foodAlt}">`;
   if ((window.innerWidth > 950)) {
   $(".dinnerResult").empty();
   setTimeout(function() {
@@ -292,10 +292,10 @@ quaranscene.displayMovieResult = (movieList) => {
   };
 
   //append combined movie & dinner results for mobile
-  const combinedToAppend = `<div class="combined"> <p>Movie: ${quaranscene.movieTitle}</p>
-  <p>Food: ${quaranscene.filteredFood[0].food}</p> </div>
-  <img src="${quaranscene.baseImageURL}${quaranscene.moviePoster}" alt="">
-  <img src="${quaranscene.filteredFood[0].foodImage}" alt="${quaranscene.filteredFood[0].foodAlt}">`;
+  const combinedToAppend = `<div class="combined"> <p>Movie: ${reelMealApp.movieTitle}</p>
+  <p>Food: ${reelMealApp.filteredFood[0].food}</p> </div>
+  <img src="${reelMealApp.baseImageURL}${reelMealApp.moviePoster}" alt="">
+  <img src="${reelMealApp.filteredFood[0].foodImage}" alt="${reelMealApp.filteredFood[0].foodAlt}">`;
 
   if ((window.innerWidth <= 950)) {
 
@@ -309,21 +309,21 @@ quaranscene.displayMovieResult = (movieList) => {
   }
     //append the credits
   const creditToAppend = `<p>Photos used for Educational Purposes.</p>
-  <p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Food picture ${quaranscene.filteredFood[0].foodCredit}</p>`
+  <p>Photo credits: Waiter hand with plate designed by <a href="www.freepik.com">Freepik</a>. Food picture ${reelMealApp.filteredFood[0].foodCredit}</p>`
   $(".photoCredit").empty();
   $(".photoCredit").append(creditToAppend);
 };
 
 //random number for index
-quaranscene.rng = (min, max) => {
+reelMealApp.rng = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
 };
 
 // Start app
-quaranscene.init = function() {
-    // quaranscene.movieRequest();
-    quaranscene.movieRequest(quaranscene.genre);
-    // quaranscene.displayMovieResult(quaranscene.movieList);
+reelMealApp.init = function() {
+    // reelMealApp.movieRequest();
+    reelMealApp.movieRequest(reelMealApp.genre);
+    // reelMealApp.displayMovieResult(reelMealApp.movieList);
     $(".introBell").on("click", function() {
       $("#ring")[0].volume = 0.15;
       $("#ring")[0].play();
@@ -346,7 +346,7 @@ quaranscene.init = function() {
 
 //document ready
 $(function() {
-    quaranscene.init();
+    reelMealApp.init();
 });
 
 
