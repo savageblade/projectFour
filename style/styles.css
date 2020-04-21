@@ -633,7 +633,7 @@ footer {
   }
   .fakeCover::before {
     width: 400px;
-    margin-left: 200px;
+    margin-left: -200px;
   }
   .movieCover {
     z-index: 2;
