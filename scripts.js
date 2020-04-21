@@ -331,12 +331,18 @@ quaranscene.init = function() {
     quaranscene.movieRequest(quaranscene.genre);
     // quaranscene.displayMovieResult(quaranscene.movieList);
     $(".introBell").on("click", function() {
-      $("#ring")[0].volume = 0.15;
-      $("#ring")[0].play();
-      if ((window.innerWidth <= 950)) {
+      // $("#ring")[0].volume = 0.15;
+      // $("#ring")[0].play();
+      if ((window.innerWidth <= 750)) {
         document.getElementById("genreSelection").focus({ preventScroll: false });
         window.scrollTo({
-        top: 900,
+        top: 650,
+        behavior: "smooth"
+      })
+    } else if ((window.innerWidth <= 1000)) {
+        document.getElementById("genreSelection").focus({ preventScroll: false });
+        window.scrollTo({
+        top: 650,
         behavior: "smooth"
       })
     } else {
