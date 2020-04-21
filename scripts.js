@@ -233,10 +233,16 @@ $('.bell').on('click', function () {
       },600)
       
     } else { //lid has already been opened
-      $(".movieContainer .fakeCover").removeClass("movieOpenState");
-      $(".movieContainer .fakeCover").addClass("movieClosedState");
-      $(".dinnerContainer .fakeCover").removeClass("dinnerOpenState");
-      $(".dinnerContainer .fakeCover").addClass("dinnerClosedState");
+      
+      $(".movieResult").removeClass("resultsFadeIn");
+      $(".dinnerResult").removeClass("resultsFadeIn");
+      
+        $(".movieContainer .fakeCover").removeClass("movieOpenState");
+        $(".movieContainer .fakeCover").addClass("movieClosedState");
+        $(".dinnerContainer .fakeCover").removeClass("dinnerOpenState");
+        $(".dinnerContainer .fakeCover").addClass("dinnerClosedState");
+      
+      
       //allow time for the animation to "close" the lid before updating the images
       setTimeout(function() {
         $('.dinnerResult').removeClass('resultsFadeIn');
