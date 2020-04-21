@@ -21,6 +21,9 @@
     }
     
     .movieResult {
+        img {
+            max-width: 150px;
+        }
         width: 300px;
         position: absolute;
         left: 50%;
