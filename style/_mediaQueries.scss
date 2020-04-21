@@ -1,3 +1,4 @@
+//Tablet design
 @media (max-width: 950px) {
     body {
         font-size: 2rem;
@@ -20,6 +21,13 @@
         margin: -60px;
     }
     
+    //Hide unused dinner plate images
+    .dinnerContainer .fakeCover,
+    .dinnerPlate {
+        display: none;
+    }
+
+    //Increase to account for both movie and food image results
     .movieResult {
         img {
             max-width: 150px;
@@ -28,17 +36,6 @@
         position: absolute;
         left: 50%;
         margin-left: -150px;
-    }
-    .dinnerContainer .fakeCover,
-    .dinnerPlate {
-        display: none;
-    }
-
-    .dinnerContainer {
-        position: absolute;
-        left: 50%;
-        top: 60px;
-        z-index: -1;
     }
 
     .fakeCover {
@@ -61,6 +58,7 @@
     
 }
 
+//Mobile design
 @media (max-width: 500px) {
     body {
         font-size: 1.8rem;

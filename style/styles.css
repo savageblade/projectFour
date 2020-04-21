@@ -248,6 +248,13 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: #F0FFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
 header {
   height: 100vh;
   display: -webkit-box;
@@ -265,21 +272,12 @@ header {
           align-items: center;
 }
 
-body {
-  background-color: #F0FFFF;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.4rem;
-  text-align: center;
-}
-
 header, footer {
   margin: 0 100px;
 }
 
-main {
-  height: calc(100vh - 50px);
-  overflow: hidden;
-  padding-bottom: 50px;
+.logo {
+  width: 100px;
 }
 
 h1 {
@@ -287,6 +285,12 @@ h1 {
   font-family: 'Cinzel', serif;
   font-size: 8rem;
   text-align: center;
+}
+
+main {
+  height: calc(100vh - 50px);
+  overflow: hidden;
+  padding-bottom: 50px;
 }
 
 li {
@@ -386,10 +390,6 @@ button:hover, button:focus, select:hover, select:focus, option:hover, option:foc
 button:hover i, button:focus i {
   -webkit-animation: wiggle 0.5s ease-in-out;
           animation: wiggle 0.5s ease-in-out;
-}
-
-.logo {
-  width: 100px;
 }
 
 .genreUl {
@@ -496,7 +496,6 @@ button:hover i, button:focus i {
   padding: 0;
 }
 
-/*Plates*/
 .movieClosedState {
   -webkit-transform: rotatez(0);
           transform: rotatez(0);
@@ -609,6 +608,10 @@ footer {
     left: 50%;
     margin: -60px;
   }
+  .dinnerContainer .fakeCover,
+  .dinnerPlate {
+    display: none;
+  }
   .movieResult {
     width: 300px;
     position: absolute;
@@ -617,16 +620,6 @@ footer {
   }
   .movieResult img {
     max-width: 150px;
-  }
-  .dinnerContainer .fakeCover,
-  .dinnerPlate {
-    display: none;
-  }
-  .dinnerContainer {
-    position: absolute;
-    left: 50%;
-    top: 60px;
-    z-index: -1;
   }
   .fakeCover {
     width: 370px;

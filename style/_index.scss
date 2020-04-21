@@ -7,6 +7,15 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    background-color: #F0FFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+//Header section styles
+
 header {
     height: 100vh;
     display: flex;
@@ -15,21 +24,12 @@ header {
     align-items: center;
 }
 
-body {
-    background-color: #F0FFFF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.4rem;
-    text-align: center;
-}
-
 header, footer {
     margin: 0 100px ;
 }
 
-main {
-    height: calc(100vh - 50px);
-    overflow: hidden;
-    padding-bottom: 50px;
+.logo{
+    width: 100px;
 }
 
 h1 {
@@ -39,10 +39,17 @@ h1 {
     text-align: center;
 }
 
+//Main section styles
+
+main {
+    height: calc(100vh - 50px);
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+
 li {
     list-style-type: none;
 }
-
 
 option, button, select {
     background-color: $primary-bg;
@@ -77,6 +84,7 @@ button:hover, button:focus, select:hover, select:focus, option:hover, option:foc
     background-color: $secondary-bg;
 }
 
+//bell icon animation
 @keyframes wiggle {
     0% {transform: rotatez(0);}
     20% {transform: rotatez(20deg);}
@@ -89,10 +97,6 @@ button:hover, button:focus, select:hover, select:focus, option:hover, option:foc
 button:hover i, button:focus i {
     animation: wiggle 0.5s ease-in-out; 
 } 
-
-.logo{
-    width: 100px;
-}
 
 .genreUl {
     display: flex;
@@ -170,7 +174,7 @@ button:hover i, button:focus i {
     padding: 0;
 }
 
-/*Plates*/
+//Plates and plate covers
 
 .movieClosedState {
     transform: rotatez(0);
@@ -187,7 +191,6 @@ button:hover i, button:focus i {
 .dinnerOpenState {
     transform: rotatez(90deg);
 }
-
 
 .fakeCover {
     width: 440px;
@@ -210,7 +213,6 @@ button:hover i, button:focus i {
 .dinnerContainer .fakeCover {
     transform-origin: 200% 50%;
 }
-
 
 .fakeCover::after {
     content: '';
@@ -237,7 +239,6 @@ button:hover i, button:focus i {
     background-color: rgb(90, 90, 90);
 }
 
-
 .moviePlate, .dinnerPlate {
     position: absolute;
     width: 1000px;
@@ -252,6 +253,8 @@ button:hover i, button:focus i {
 .dinnerPlate {
     right: -775px;
 }
+
+//Footer section styles
 
 footer {
     font-size: 1.4rem;
