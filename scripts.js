@@ -214,6 +214,7 @@ quaranscene.genre = quaranscene.genreOptions[quaranscene.userSelection];
 
 //event listener for user ssubmit
 $('.bell').on('click', function () {
+  //make api call on click
   $('#ring')[0].volume = 0.15;
   $('#ring')[0].play();
     //make the movie request
@@ -233,16 +234,13 @@ $('.bell').on('click', function () {
       },600)
       
     } else { //lid has already been opened
-      
+      //fade out the previous results on new request 
       $(".movieResult").removeClass("resultsFadeIn");
       $(".dinnerResult").removeClass("resultsFadeIn");
-      
-        $(".movieContainer .fakeCover").removeClass("movieOpenState");
-        $(".movieContainer .fakeCover").addClass("movieClosedState");
-        $(".dinnerContainer .fakeCover").removeClass("dinnerOpenState");
-        $(".dinnerContainer .fakeCover").addClass("dinnerClosedState");
-      
-      
+      $(".movieContainer .fakeCover").removeClass("movieOpenState");
+      $(".movieContainer .fakeCover").addClass("movieClosedState");
+      $(".dinnerContainer .fakeCover").removeClass("dinnerOpenState");
+      $(".dinnerContainer .fakeCover").addClass("dinnerClosedState");
       //allow time for the animation to "close" the lid before updating the images
       setTimeout(function() {
         $('.dinnerResult').removeClass('resultsFadeIn');
@@ -256,16 +254,7 @@ $('.bell').on('click', function () {
         $(".dinnerContainer .fakeCover").removeClass("dinnerClosedState");
         $(".dinnerContainer .fakeCover").addClass("dinnerOpenState");
       }, 2000);
-      
     }
-
-
-  //make api call on click
-
-
-
-
-    
 })
 
 //select movie title and poster from api array using random index
@@ -329,7 +318,6 @@ quaranscene.displayMovieResult = (movieList) => {
 quaranscene.rng = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min)
 };
-
 
 // Start app
 quaranscene.init = function() {

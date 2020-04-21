@@ -1,3 +1,8 @@
+$primary-bg: #DE6449;
+$secondary-bg: #AF3800;
+$text-bg: #C5D5EA;
+$shadowColor: #759EB8;
+
 html {
     font-size: 62.5%;
 }
@@ -38,15 +43,10 @@ li {
     list-style-type: none;
 }
 
-$primary-bg: #DE6449;
-$secondary-bg: #AF3800;
-$text-bg: #C5D5EA;
-$shadowColor: #759EB8;
-
 
 option, button, select {
     background-color: $primary-bg;
-color: white;
+    color: white;
 }
 
 select{
@@ -131,7 +131,7 @@ button:hover i, button:focus i {
         animation: glow 1.25s infinite alternate;  
         -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
         -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
-            transition: border 1.0s linear, box-shadow 1.0s linear;
+        transition: border 1.0s linear, box-shadow 1.0s linear;
     }
 
     .combined {
@@ -199,7 +199,6 @@ button:hover i, button:focus i {
     top: 0;
     left: 50%;
     margin-left: -220px;
-    
     transition: all 1.6s;
 }
 
@@ -221,8 +220,8 @@ button:hover i, button:focus i {
     height: 40px;
     margin-left: -20px;
     border-radius: 50%;
-     background: rgb(157,157,157);
-background: linear-gradient(90deg, rgba(157,157,157,1) 0%, rgba(57,57,57,1) 100%); 
+    background: rgb(157,157,157);
+    background: linear-gradient(90deg, rgba(157,157,157,1) 0%, rgba(57,57,57,1) 100%); 
     border-bottom: 2px solid black;
 }
 
@@ -242,7 +241,6 @@ background: linear-gradient(90deg, rgba(157,157,157,1) 0%, rgba(57,57,57,1) 100%
     position: absolute;
     width: 1000px;
     top: 188px;
-
     z-index: -1;
 }
 
