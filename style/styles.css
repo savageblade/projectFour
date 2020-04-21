@@ -614,6 +614,9 @@ footer {
     left: 50%;
     margin-left: -150px;
   }
+  .movieResult img {
+    max-width: 150px;
+  }
   .dinnerContainer .fakeCover,
   .dinnerPlate {
     display: none;
