@@ -310,6 +310,7 @@ select {
   border: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  margin-bottom: 10px;
 }
 
 button {
