@@ -47,6 +47,7 @@ li {
 option, button, select {
     background-color: $primary-bg;
     color: white;
+    text-shadow: 1px 1px 1px black;
 }
 
 select{
@@ -72,7 +73,7 @@ button {
     transition: all 0.3s;
 }
 
-button:hover, button:focus, select:hover, select:focus {
+button:hover, button:focus, select:hover, select:focus, option:hover, option:focus {
     background-color: $secondary-bg;
 }
 
