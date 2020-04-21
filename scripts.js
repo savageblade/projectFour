@@ -39,102 +39,155 @@ quaranscene.genreOptions = {
 
 //food array
 quaranscene.cuisinePairing = [
-  {genre: "action",
-  food: "Pizza",
-  foodImage: "assets/pizza.jpg",
-  foodAlt: "A photo of pepperoni pizza.",
-  foodCredit: "Alan Hardman on Unsplash."},
-  {genre: "adventure",
-  food: "Escargot",
-  foodImage: "assets/escargot.jpg",
-  foodAlt: "A photo of six escargot presented in a cast iron pan on a plate.",
-  foodCredit: "Ali Robins on Unsplash."},
-  {genre: "animation",
-  food:  "Lucky Charms Cereal",
-  foodImage: "assets/luckyCharms.jpg",
-  foodAlt: "A photo of a box of Lucky Charms cereal.",
-  foodCredit: ""},
-  {genre: "comedy",
-  food:  "Caramel Popcorn",
-  foodImage: "assets/caramelPopcorn.jpg",
-  foodAlt: "A photo of caramel popcorn in a bowl on a pink and white checkered table.",
-  foodCredit: "John Tecuceanu on Unsplash."},
-  {genre: "crime",
-  food:  "Doughnuts and Coffee",
-  foodImage: "assets/doughnuts.jpg",
-  foodAlt: "A cardboard box containing 6 varieties of doughnuts sits open on a wooden table beside a cup of coffee.", 
-  foodCredit: "Zach Miles on Unsplash."},
-  { genre: "documentary",
-  food:  "Soft Pretzels",
-  foodImage: "assets/pretzel.jpg",
-  foodAlt: "A person holds up a large soft pretzel.", 
-  foodCredit: "Pierre Gui on Unsplash."},
-  {genre: "drama",
-  food:  "Wine and Cheese Platter",
-  foodImage: "assets/wineCheese.jpg",
-  foodAlt: "A picnic of white wine and cheese with bread is laid out on a blanket in the grass.",
-  foodCredit: "Alexandra K on Unsplash."},
-  {genre: "family",
-  food:  "Fast Food",
-  foodImage: "assets/fastFood.jpg",
-  foodAlt: "A table containing McDonald's fries, ketchup, burgers, and pop waits to be eaten.",
-  foodCredit: "Sepet on Unsplash."},
-  {genre: "fantasy",
-  food:  "Dragonfruit",
-  foodImage: "assets/dragon.jpg",
-  foodAlt: "A dragon fruit sits on a white plate with a spoon. Half of the dragon fruit has been cut into four slices.", 
-  foodCredit: "OhTilly on Unsplash."},
-  {genre: "history",
-  food:  "Rotisserie Chicken",
-  foodImage: "assets/chicken.jpg",
-  foodAlt: "A roasted chicken sits in a glass pan.",
-  foodCredit: "Jennifer Burk on Unsplash."},
-  {genre: "horror",
-  food:  "Tomato Soup",
-  foodImage: "assets/soup.jpg",
-  foodAlt: "A glass bowl containing tomato soup sits on a black table surrounded by spices and two whole tomatoes.",
-  foodCredit: "Dennis Klein on Unsplash."},
-  {genre: "music",
-  food:  "Birthday Cake",
-  foodImage: "assets/cake.jpg",
-  foodAlt: "A slice of cake made up of layers that match the colours of the rainbow is displayed on a wooden block.",
-  foodCredit: "Heino Elnionis on Unsplash."},
-  {genre: "mystery",
-  food: "Spam",
-  foodImage: "assets/spam.jpg",
-  foodAlt: "Multiple cases of spam are stacked on top of each other.",
-  foodCredit: "Hannes Johnson on Unsplash."},
-  {genre: "romance",
-  food:  "Spaghetti",
-  foodImage: "assets/spaghetti.jpg",
-  foodAlt: "A fork wrapped in spaghetti is held above a shallow bowl of spaghetti with a slice of bread.",
-  foodCredit: "Keri Iiwi on Unsplash."},
-  {genre: "scienceFiction",
-  food:  "Freeze-dried Foods",
-  foodImage: "assets/astro.jpg",
-  foodAlt: "Five packages of freeze-dried foods from the Astronaut brand containing different fruits. A pile of freeze-dried strawberries, bananas, and peaches sits beside the packages.",
-  foodCredit: ""},
-  {genre: "tvMovie",
-  food: "Microwave Dinner",
-  foodImage: "assets/microwave.jpg",
-  foodAlt: "Nine different microwave dinners are stacked on top of each other on a marble countertop.",
-  foodCredit: ""},
-  {genre: "thriller",
-  food:  "Popcorn",
-  foodImage:"assets/popcorn.jpg",
-  foodAlt: "A glass bowl filled to the brim with white popcorn.",
-  foodCredit: "Alex Munsell on Unsplash."},
-  {genre: "war",
-  food:  "Canned Food",
-  foodImage: "assets/canned.jpg",
-  foodAlt: "Three cans of Organic Chili laid on a black and white plaid cloth. From left to right the labels on the cans read: Medium, Spicy and Black Bean.",
-  foodCredit: "Andrea Davis on Unsplash."},
-  {genre: "western",
-  food:  "Steak and Potatoes",
-  foodImage: "assets/steak.jpg",
-  foodAlt: "A medium rare steak is cut into slices and covered in gravy on a plate beside roasted potatoes, carrots, and broccoli.",
-  foodCredit: "Amirali Mirhashemian on Unsplash."}
-]
+  {
+    genre: "action",
+    food: "Pizza",
+    foodImage: "assets/pizza.jpg",
+    foodAlt: "A photo of pepperoni pizza.",
+    foodCredit: "Alan Hardman on Unsplash.",
+  },
+  {
+    genre: "adventure",
+    food: "Escargot",
+    foodImage: "assets/escargot.jpg",
+    foodAlt: "A photo of six escargot presented in a cast iron pan on a plate.",
+    foodCredit: "Ali Robins on Unsplash.",
+  },
+  {
+    genre: "animation",
+    food: "Lucky Charms Cereal",
+    foodImage: "assets/luckyCharms.jpg",
+    foodAlt: "A photo of a box of Lucky Charms cereal.",
+    foodCredit:
+      "<a href='https://www.walmart.ca/en/ip/lucky-charms-cereal/6000198307982'> walmart.ca</a>",
+  },
+  {
+    genre: "comedy",
+    food: "Caramel Popcorn",
+    foodImage: "assets/caramelPopcorn.jpg",
+    foodAlt:
+      "A photo of caramel popcorn in a bowl on a pink and white checkered table.",
+    foodCredit: "John Tecuceanu on Unsplash.",
+  },
+  {
+    genre: "crime",
+    food: "Doughnuts and Coffee",
+    foodImage: "assets/doughnuts.jpg",
+    foodAlt:
+      "A cardboard box containing 6 varieties of doughnuts sits open on a wooden table beside a cup of coffee.",
+    foodCredit: "Zach Miles on Unsplash.",
+  },
+  {
+    genre: "documentary",
+    food: "Soft Pretzels",
+    foodImage: "assets/pretzel.jpg",
+    foodAlt: "A person holds up a large soft pretzel.",
+    foodCredit: "Pierre Gui on Unsplash.",
+  },
+  {
+    genre: "drama",
+    food: "Wine and Cheese Platter",
+    foodImage: "assets/wineCheese.jpg",
+    foodAlt:
+      "A picnic of white wine and cheese with bread is laid out on a blanket in the grass.",
+    foodCredit: "Alexandra K on Unsplash.",
+  },
+  {
+    genre: "family",
+    food: "Fast Food",
+    foodImage: "assets/fastFood.jpg",
+    foodAlt:
+      "A table containing McDonald's fries, ketchup, burgers, and pop waits to be eaten.",
+    foodCredit: "Sepet on Unsplash.",
+  },
+  {
+    genre: "fantasy",
+    food: "Dragonfruit",
+    foodImage: "assets/dragon.jpg",
+    foodAlt:
+      "A dragon fruit sits on a white plate with a spoon. Half of the dragon fruit has been cut into four slices.",
+    foodCredit: "OhTilly on Unsplash.",
+  },
+  {
+    genre: "history",
+    food: "Rotisserie Chicken",
+    foodImage: "assets/chicken.jpg",
+    foodAlt: "A roasted chicken sits in a glass pan.",
+    foodCredit: "Jennifer Burk on Unsplash.",
+  },
+  {
+    genre: "horror",
+    food: "Tomato Soup",
+    foodImage: "assets/soup.jpg",
+    foodAlt:
+      "A glass bowl containing tomato soup sits on a black table surrounded by spices and two whole tomatoes.",
+    foodCredit: "Dennis Klein on Unsplash.",
+  },
+  {
+    genre: "music",
+    food: "Birthday Cake",
+    foodImage: "assets/cake.jpg",
+    foodAlt:
+      "A slice of cake made up of layers that match the colours of the rainbow is displayed on a wooden block.",
+    foodCredit: "Heino Elnionis on Unsplash.",
+  },
+  {
+    genre: "mystery",
+    food: "Spam",
+    foodImage: "assets/spam.jpg",
+    foodAlt: "Multiple cases of spam are stacked on top of each other.",
+    foodCredit: "Hannes Johnson on Unsplash.",
+  },
+  {
+    genre: "romance",
+    food: "Spaghetti",
+    foodImage: "assets/spaghetti.jpg",
+    foodAlt:
+      "A fork wrapped in spaghetti is held above a shallow bowl of spaghetti with a slice of bread.",
+    foodCredit: "Keri Iiwi on Unsplash.",
+  },
+  {
+    genre: "scienceFiction",
+    food: "Freeze-dried Foods",
+    foodImage: "assets/astro.jpg",
+    foodAlt:
+      "Five packages of freeze-dried foods from the Astronaut brand containing different fruits. A pile of freeze-dried strawberries, bananas, and peaches sits beside the packages.",
+    foodCredit:
+      "<a href='https://www.amazon.com/stores/AstronautFoods/AstronautFoods/page/46D2BE6E-410D-4B4F-9A13-E66D2542EE1D'>amazon.ca</a>",
+  },
+  {
+    genre: "tvMovie",
+    food: "Microwave Dinner",
+    foodImage: "assets/microwave.jpg",
+    foodAlt:
+      "Nine different microwave dinners are stacked on top of each other on a marble countertop.",
+    foodCredit:
+      "Lee Breslouer from <a href='https://www.thrillist.com/eat/nation/read-this-and-you-may-never-want-a-microwaved-dinner-again'>thrillist</a>.",
+  },
+  {
+    genre: "thriller",
+    food: "Popcorn",
+    foodImage: "assets/popcorn.jpg",
+    foodAlt: "A glass bowl filled to the brim with white popcorn.",
+    foodCredit: "Alex Munsell on Unsplash.",
+  },
+  {
+    genre: "war",
+    food: "Canned Food",
+    foodImage: "assets/canned.jpg",
+    foodAlt:
+      "Three cans of Organic Chili laid on a black and white plaid cloth. From left to right the labels on the cans read: Medium, Spicy and Black Bean.",
+    foodCredit: "Andrea Davis on Unsplash.",
+  },
+  {
+    genre: "western",
+    food: "Steak and Potatoes",
+    foodImage: "assets/steak.jpg",
+    foodAlt:
+      "A medium rare steak is cut into slices and covered in gravy on a plate beside roasted potatoes, carrots, and broccoli.",
+    foodCredit: "Amirali Mirhashemian on Unsplash.",
+  },
+];
 
 //ajax call to the API
 quaranscene.movieRequest = (id) => {
@@ -281,11 +334,13 @@ quaranscene.init = function() {
       $("#ring")[0].volume = 0.15;
       $("#ring")[0].play();
       if ((window.innerWidth <= 950)) {
+        document.getElementById("genreSelection").focus({ preventScroll: false });
         window.scrollTo({
         top: 900,
         behavior: "smooth"
       })
     } else {
+      document.getElementById("genreSelection").focus({ preventScroll: false });
       window.scrollTo({
         top: 1100,
         behavior: "smooth"
