@@ -214,7 +214,8 @@ quaranscene.genre = quaranscene.genreOptions[quaranscene.userSelection];
 
 //event listener for user ssubmit
 $('.bell').on('click', function () {
-  $("#ring")[0].play();
+  $('#ring')[0].volume = 0.15;
+  $('#ring')[0].play();
     //make the movie request
     quaranscene.movieRequest(quaranscene.genre);
     //on initial web site load, the covers will be closed so just reveal the content
@@ -330,6 +331,8 @@ quaranscene.init = function() {
     quaranscene.movieRequest(quaranscene.genre);
     // quaranscene.displayMovieResult(quaranscene.movieList);
     $(".introBell").on("click", function() {
+      $("#ring")[0].volume = 0.15;
+      $("#ring")[0].play();
       if ((window.innerWidth <= 950)) {
         document.getElementById("genreSelection").focus({ preventScroll: false });
         window.scrollTo({
