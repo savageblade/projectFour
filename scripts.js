@@ -278,6 +278,8 @@ quaranscene.init = function() {
     quaranscene.movieRequest(quaranscene.genre);
     // quaranscene.displayMovieResult(quaranscene.movieList);
     $(".introBell").on("click", function() {
+      $("#ring")[0].volume = 0.15;
+      $("#ring")[0].play();
       if ((window.innerWidth <= 950)) {
         window.scrollTo({
         top: 900,
