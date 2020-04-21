@@ -161,7 +161,7 @@ quaranscene.genre = quaranscene.genreOptions[quaranscene.userSelection];
 
 //event listener for user ssubmit
 $('.bell').on('click', function () {
-
+  $("#ring")[0].play();
     //make the movie request
     quaranscene.movieRequest(quaranscene.genre);
     //on initial web site load, the covers will be closed so just reveal the content
