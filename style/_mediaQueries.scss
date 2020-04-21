@@ -22,7 +22,7 @@
     
     .movieResult {
         img {
-            width:150px;
+            max-width: 150px;
         }
         width: 300px;
         position: absolute;
@@ -48,7 +48,7 @@
 
     .fakeCover::before {
         width: 400px;
-        margin-left: 200px;
+        margin-left: -200px;
     }
 
     .movieCover {

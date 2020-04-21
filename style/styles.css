@@ -614,6 +614,9 @@ footer {
     left: 50%;
     margin-left: -150px;
   }
+  .movieResult img {
+    max-width: 150px;
+  }
   .dinnerContainer .fakeCover,
   .dinnerPlate {
     display: none;
@@ -630,7 +633,7 @@ footer {
   }
   .fakeCover::before {
     width: 400px;
-    margin-left: 200px;
+    margin-left: -200px;
   }
   .movieCover {
     z-index: 2;
